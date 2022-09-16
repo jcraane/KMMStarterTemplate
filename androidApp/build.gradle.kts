@@ -39,6 +39,7 @@ dependencies {
     implementation(Dependencies.Compose.composeFoundation)
     implementation(Dependencies.Compose.composeMaterial)
     implementation(Dependencies.Compose.composeActivity)
+    implementation(Dependencies.Compose.lifecycle)
 
     // Navigation
     implementation(Dependencies.Android.navigation)
