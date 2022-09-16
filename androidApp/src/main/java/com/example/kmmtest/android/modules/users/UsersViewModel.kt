@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 //todo move to shared module
-class UsersViewModel(private val userRepository: UserRepository) : ViewModel() {
+class UsersViewModel(userRepository: UserRepository) : ViewModel() {
     val users = userRepository.getAll().stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(), DataState.Empty()
     )
