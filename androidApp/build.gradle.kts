@@ -46,5 +46,5 @@ dependencies {
     // Dependency Injection
     implementation(Dependencies.Koin.compose)
     implementation(Dependencies.Koin.android)
-    implementation(Dependencies.Koin.compose)
+    implementation(Dependencies.Koin.core)
 }
