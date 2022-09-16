@@ -1,8 +1,6 @@
-package com.example.kmmtest.api
+package com.example.kmmtest.util
 
 import com.example.kmmtest.platform.logging.Logger
-
-private const val TAG = "HttpClientLogger"
 
 public object HttpClientLogger : io.ktor.client.plugins.logging.Logger {
 
