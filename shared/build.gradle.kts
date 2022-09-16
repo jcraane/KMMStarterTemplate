@@ -1,8 +1,8 @@
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    kotlin("plugin.serialization")
-    id("com.android.library")
+    kotlin(Plugins.multiPlatform)
+    kotlin(Plugins.cocoaPods)
+    kotlin(Plugins.kotlinSerialization)
+    id(Plugins.androidLib)
 }
 
 kotlin {
@@ -21,17 +21,17 @@ kotlin {
             baseName = "shared"
         }
     }
-    
+
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-core:2.1.1")
-                implementation("io.ktor:ktor-client-cio:2.1.1")
-                implementation("io.ktor:ktor-client-content-negotiation:2.1.1")
-                implementation("io.ktor:ktor-client-logging:2.1.1")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation(Deps.JetBrains.Ktor.clientCore)
+                implementation(Deps.JetBrains.Ktor.clientCio)
+                implementation(Deps.JetBrains.Ktor.clientContentNegotiation)
+                implementation(Deps.JetBrains.Ktor.clientLogging)
+                implementation(Deps.JetBrains.Ktor.clientSerialization)
+                implementation(Deps.JetBrains.kotlinSerialization)
+                implementation(Deps.JetBrains.kotlinDateTime)
             }
         }
         val commonTest by getting {
@@ -64,9 +64,9 @@ kotlin {
 
 android {
     namespace = "com.example.kmmstartertemplate"
-    compileSdk = 32
+    compileSdk = Versions.compileSdk
     defaultConfig {
-        minSdk = 28
-        targetSdk = 32
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
     }
 }
