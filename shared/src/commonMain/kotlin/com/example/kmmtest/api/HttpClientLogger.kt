@@ -1,0 +1,12 @@
+package com.example.kmmtest.api
+
+import com.example.kmmtest.platform.logging.Logger
+
+private const val TAG = "HttpClientLogger"
+
+public object HttpClientLogger : io.ktor.client.plugins.logging.Logger {
+
+    override fun log(message: String) {
+        Logger.d(TAG, message)
+    }
+}
