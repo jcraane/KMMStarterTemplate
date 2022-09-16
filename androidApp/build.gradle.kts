@@ -1,15 +1,15 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(Plugins.androidApplication)
+    kotlin(Plugins.kotlinAndroid)
 }
 
 android {
     namespace = "com.example.kmmstartertemplate.android"
-    compileSdk = 32
+    compileSdk = Versions.compileSdk
     defaultConfig {
         applicationId = "com.example.kmmstartertemplate.android"
-        minSdk = 28
-        targetSdk = 32
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
         versionCode = 1
         versionName = "1.0"
     }
@@ -33,18 +33,18 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
+    implementation(Dependencies.Compose.composeUI)
+    implementation(Dependencies.Compose.composeUITooling)
+    implementation(Dependencies.Compose.composeUIToolingPreview)
+    implementation(Dependencies.Compose.composeFoundation)
+    implementation(Dependencies.Compose.composeMaterial)
+    implementation(Dependencies.Compose.composeActivity)
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.5.2")
+    implementation(Dependencies.Android.navigation)
 
     // Dependency Injection
-    implementation("io.insert-koin:koin-core:3.2.0")
-    implementation("io.insert-koin:koin-android:3.2.0")
-    implementation("io.insert-koin:koin-androidx-compose:3.2.0")
+    implementation(Dependencies.Koin.compose)
+    implementation(Dependencies.Koin.android)
+    implementation(Dependencies.Koin.compose)
 }

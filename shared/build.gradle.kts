@@ -2,7 +2,7 @@ plugins {
     kotlin(Plugins.multiPlatform)
     kotlin(Plugins.cocoaPods)
     kotlin(Plugins.kotlinSerialization)
-    id(Plugins.androidLib)
+    id(Plugins.androidLibrary)
 }
 
 kotlin {
@@ -25,13 +25,13 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Deps.JetBrains.Ktor.clientCore)
-                implementation(Deps.JetBrains.Ktor.clientCio)
-                implementation(Deps.JetBrains.Ktor.clientContentNegotiation)
-                implementation(Deps.JetBrains.Ktor.clientLogging)
-                implementation(Deps.JetBrains.Ktor.clientSerialization)
-                implementation(Deps.JetBrains.kotlinSerialization)
-                implementation(Deps.JetBrains.kotlinDateTime)
+                implementation(Dependencies.JetBrains.Ktor.clientCore)
+                implementation(Dependencies.JetBrains.Ktor.clientCio)
+                implementation(Dependencies.JetBrains.Ktor.clientContentNegotiation)
+                implementation(Dependencies.JetBrains.Ktor.clientLogging)
+                implementation(Dependencies.JetBrains.Ktor.clientSerialization)
+                implementation(Dependencies.JetBrains.kotlinSerialization)
+                implementation(Dependencies.JetBrains.kotlinDateTime)
             }
         }
         val commonTest by getting {
