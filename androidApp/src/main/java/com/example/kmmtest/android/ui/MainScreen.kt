@@ -7,8 +7,8 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 import com.example.kmmtest.android.StarterAppNavHost
-import com.example.kmmtest.android.modules.users.UsersViewModel
 import com.example.kmmtest.navigation.BottomTabs
+import com.example.kmmtest.users.viewmodel.UsersViewModel
 
 @Composable
 fun MainScreen(

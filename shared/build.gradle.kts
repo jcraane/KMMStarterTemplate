@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.cocoaPods)
     kotlin(Plugins.kotlinSerialization)
     id(Plugins.androidLibrary)
+    id(Plugins.kotlinParcelize)
 }
 
 kotlin {
@@ -39,7 +40,12 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                implementation(Dependencies.Compose.lifecycleViewModel)
+                implementation(Dependencies.Compose.lifecycleViewModelKtx)
+            }
+        }
         val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting

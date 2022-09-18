@@ -5,6 +5,7 @@ object Plugins {
     const val androidLibrary = "com.android.library"
     const val androidApplication = "com.android.application"
     const val kotlinAndroid = "android"
+    const val kotlinParcelize = "kotlin-parcelize"
 }
 
 object Versions {
@@ -42,6 +43,8 @@ object Dependencies {
         const val composeMaterial = "androidx.compose.material:material:${Versions.composeVersion}"
         const val composeActivity = "androidx.activity:activity-compose:1.5.1"
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.androidLifecycle}"
+        const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.androidLifecycle}"
+        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidLifecycle}"
     }
 
     object Android {

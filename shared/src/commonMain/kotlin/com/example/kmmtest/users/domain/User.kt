@@ -1,3 +1,7 @@
 package com.example.kmmtest.users.domain
 
-data class User(val name: String)
+import com.example.kmmtest.platform.Parcelable
+import com.example.kmmtest.platform.Parcelize
+
+@Parcelize
+data class User(val name: String) : Parcelable

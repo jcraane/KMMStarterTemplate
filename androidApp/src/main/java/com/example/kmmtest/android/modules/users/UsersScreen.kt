@@ -15,6 +15,7 @@ import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.users.domain.User
+import com.example.kmmtest.users.viewmodel.UsersViewModel
 import com.example.kmmtest.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
