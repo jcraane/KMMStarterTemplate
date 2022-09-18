@@ -27,7 +27,9 @@ fun UsersScreen(viewModel: UsersViewModel, modifier: Modifier = Modifier) {
         usersData.ToComposable() { users ->
             LazyColumn() {
                 items(users) { user ->
-                    UserRow(user = user)
+                    UserRow(user = user, onUserClicked = {
+                        // todo implement
+                    })
                 }
             }
         }
@@ -35,7 +37,7 @@ fun UsersScreen(viewModel: UsersViewModel, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun UserRow(user: User) {
+private fun UserRow(user: User, onUserClicked: (User) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()

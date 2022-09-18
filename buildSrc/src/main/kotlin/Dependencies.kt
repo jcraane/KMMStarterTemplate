@@ -6,6 +6,7 @@ object Plugins {
     const val androidApplication = "com.android.application"
     const val kotlinAndroid = "android"
     const val kotlinParcelize = "kotlin-parcelize"
+    const val kmpNativeCoroutines = "com.rickclephas.kmp.nativecoroutines"
 }
 
 object Versions {
@@ -19,6 +20,7 @@ object Versions {
     const val androidNavigationVersion = "2.5.2"
     const val koinVersion = "3.2.0"
     const val androidLifecycle = "2.6.0-alpha02"
+    const val kmpNativeCoroutinesVersion = "0.12.6-new-mm"
 }
 
 object Dependencies {

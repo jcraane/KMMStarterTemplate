@@ -4,6 +4,7 @@ plugins {
     kotlin(Plugins.kotlinSerialization)
     id(Plugins.androidLibrary)
     id(Plugins.kotlinParcelize)
+    id(Plugins.kmpNativeCoroutines) version(Versions.kmpNativeCoroutinesVersion)
 }
 
 kotlin {
