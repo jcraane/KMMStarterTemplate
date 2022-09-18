@@ -4,7 +4,8 @@ plugins {
     kotlin(Plugins.kotlinSerialization)
     id(Plugins.androidLibrary)
     id(Plugins.kotlinParcelize)
-    id(Plugins.kmpNativeCoroutines) version(Versions.kmpNativeCoroutinesVersion)
+    id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
+    id(Plugins.kmmResource) version (Versions.kmmResources)
 }
 
 kotlin {
@@ -43,8 +44,8 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation(Dependencies.Compose.lifecycleViewModel)
-                implementation(Dependencies.Compose.lifecycleViewModelKtx)
+                /*implementation(Dependencies.Compose.lifecycleViewModel)
+                implementation(Dependencies.Compose.lifecycleViewModelKtx)*/
             }
         }
         val androidTest by getting
@@ -77,3 +78,68 @@ android {
         targetSdk = Versions.targetSdk
     }
 }
+
+dependencies {
+    implementation(Dependencies.Compose.lifecycleViewModel)
+    implementation(Dependencies.Compose.lifecycleViewModelKtx)
+}
+
+kmmResourcesConfig {
+    androidApplicationId.set("com.example.kmmstartertemplate")
+    androidSourceFolder.set("main")
+    packageName.set("com.example.kmmtest")
+    defaultLanguage.set("nl")
+    input.set(File(project.projectDir.path, "kmm-resources.yaml"))
+    output.set(project.projectDir)
+    useDefaultTranslationIfNotInitialized.set(true)
+    iosSourceFolder.set("iosMain")
+}
+
+val plutil = tasks["executePlutil"]
+val generateLocalizations = tasks["generateLocalizations"]
+plutil.dependsOn(generateLocalizations)
+
+tasks["preBuild"].dependsOn(plutil)
+
+/*
+tasks {
+    */
+/**
+     * This sets up dependencies between the plutil task and compileKotlinIos* tasks. This
+     * way common is recompiled if something in generic.yaml changes (so new ios resources
+     * are generated). If the generic.yaml file is not changed, the resources are considered
+     * up to date by Gradle.
+     *//*
+
+    listOf(
+        "compileKotlinIosArm64",
+        "compileKotlinIosX64",
+        "compileKotlinIosSimulatorArm64"
+    ).forEach { taskName ->
+        named(taskName) {
+            dependsOn(plutil)
+        }
+    }
+
+    listOf(
+        "linkDebugFrameworkIosSimulatorArm64",
+        "linkReleaseFrameworkIosSimulatorArm64",
+        "linkDebugFrameworkIosArm64",
+        "linkReleaseFrameworkIosArm64",
+        "linkDebugFrameworkIosX64",
+        "linkReleaseFrameworkIosX64"
+    ).forEach { taskName ->
+        named(taskName) {
+            doFirst {
+                val configuration = System.getenv("CONFIGURATION")
+                val sdkName = System.getenv("SDK_NAME")
+
+                copy {
+                    from("${project.rootDir}/android-app/src/commonMain/resources/ios")
+                    into("${project.buildDir}/xcode-frameworks/$configuration/$sdkName/shared.framework")
+                }
+            }
+        }
+    }
+}
+*/
