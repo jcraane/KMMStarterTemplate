@@ -6,6 +6,7 @@ plugins {
     id(Plugins.kotlinParcelize)
     id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
     id(Plugins.kmmResource) version (Versions.kmmResources)
+    id(Plugins.kmmImages) version (Versions.kmmImages)
 }
 
 kotlin {
@@ -100,6 +101,18 @@ val generateLocalizations = tasks["generateLocalizations"]
 plutil.dependsOn(generateLocalizations)
 
 tasks["preBuild"].dependsOn(plutil)
+
+kmmImagesConfig {
+    imageFolder.set(project.projectDir.resolve("../images"))
+    sharedModuleFolder.set(project.projectDir)
+    androidResFolder.set(project.projectDir.resolve("../android-app/build/generated/res"))
+    packageName.set("com.example.kmmtest")
+    defaultLanguage.set("en")
+    usePdf2SvgTool.set(true)
+}
+
+val generateImages = tasks["generateImages"]
+tasks["preBuild"].dependsOn(generateImages)
 
 /*
 tasks {
