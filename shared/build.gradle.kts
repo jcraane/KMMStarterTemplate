@@ -36,6 +36,7 @@ kotlin {
                 implementation(Dependencies.JetBrains.Ktor.clientSerialization)
                 implementation(Dependencies.JetBrains.kotlinSerialization)
                 implementation(Dependencies.JetBrains.kotlinDateTime)
+                implementation(Dependencies.Koin.core)
             }
         }
         val commonTest by getting {

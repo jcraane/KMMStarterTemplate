@@ -48,4 +48,6 @@ dependencies {
     implementation(Dependencies.Koin.compose)
     implementation(Dependencies.Koin.android)
     implementation(Dependencies.Koin.core)
+
+    implementation(Dependencies.JetBrains.Ktor.clientLogging)
 }

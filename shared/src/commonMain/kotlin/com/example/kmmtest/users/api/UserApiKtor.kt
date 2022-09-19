@@ -9,22 +9,12 @@ import io.ktor.client.request.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 
-class UserApiKtor : UserApi {
-    private val nonStrictJson = Json { isLenient = true; ignoreUnknownKeys = true }
-
-//    todo inject client into api
-    private val client = HttpClient() {
-        install(ContentNegotiation) {
-            json(nonStrictJson)
-        }
-
-        install(Logging) {
-            logger = HttpClientLogger
-            level = LogLevel.ALL
-        }
+class UserApiKtor(private val httpClient: HttpClient) : UserApi {
+    init {
+        println("DSKJDKJKDS")
     }
 
     override suspend fun getAllUsers(): UserListResponse {
-        return client.get("http://10.0.2.2:3001/users").body()
+        return httpClient.get("http://10.0.2.2:3001/users").body()
     }
 }
