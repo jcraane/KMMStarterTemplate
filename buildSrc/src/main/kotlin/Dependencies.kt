@@ -24,7 +24,8 @@ object Versions {
     const val androidLifecycle = "2.6.0-alpha02"
     const val kmpNativeCoroutinesVersion = "0.12.6-new-mm"
     const val kmmResources = "1.0.0-alpha10"
-    const val kmmImages = "1.0.0-alpha09"
+    const val kmmImages = "1.0.0-alpha11"
+    const val accompanist = "0.25.1"
 }
 
 object Dependencies {
@@ -51,6 +52,10 @@ object Dependencies {
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.androidLifecycle}"
         const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.androidLifecycle}"
         const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidLifecycle}"
+    }
+
+    object Accompanist {
+        const val drawablePainter = "com.google.accompanist:accompanist-drawablepainter:${Versions.accompanist}"
     }
 
     object Android {

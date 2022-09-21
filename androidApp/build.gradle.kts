@@ -29,6 +29,11 @@ android {
             isMinifyEnabled = false
         }
     }
+    sourceSets {
+        getByName("main") {
+            res.srcDirs("../androidApp/src/main/res-kmmimages")
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +44,8 @@ dependencies {
     implementation(Dependencies.Compose.composeFoundation)
     implementation(Dependencies.Compose.composeMaterial)
     implementation(Dependencies.Compose.composeActivity)
+    implementation(Dependencies.Accompanist.drawablePainter)
+
     implementation(Dependencies.Compose.lifecycle)
 
     // Navigation

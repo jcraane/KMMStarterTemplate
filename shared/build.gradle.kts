@@ -104,11 +104,11 @@ plutil.dependsOn(generateLocalizations)
 tasks["preBuild"].dependsOn(plutil)
 
 kmmImagesConfig {
-    imageFolder.set(project.projectDir.resolve("../images"))
+    imageFolder.set(project.projectDir.resolve("images"))
     sharedModuleFolder.set(project.projectDir)
-    androidResFolder.set(project.projectDir.resolve("../android-app/build/generated/res"))
+    androidResFolder.set(project.projectDir.resolve("../androidApp/src/main/res-kmmimages"))
     packageName.set("com.example.kmmtest")
-    defaultLanguage.set("en")
+    defaultLanguage.set("nl")
     usePdf2SvgTool.set(true)
 }
 

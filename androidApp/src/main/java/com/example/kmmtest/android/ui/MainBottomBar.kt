@@ -34,22 +34,24 @@
 
 package com.example.kmmtest.android.ui
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.navigation.BottomTabs
+import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 @Composable
 fun MainBottomBar(
@@ -77,11 +79,9 @@ private fun AppBottomNavigation(
     items: List<BottomTabs>
 ) {
     BottomNavigation() {
-
-        var selectedIndex = remember { mutableStateOf(0) }
+        val selectedIndex = remember { mutableStateOf(0) }
 
         items.forEachIndexed { index, screen ->
-
             val isSelected = selectedIndex.value == index
 
             val style = if (isSelected) {
@@ -93,10 +93,11 @@ private fun AppBottomNavigation(
             BottomNavigationItem(
                 modifier = Modifier,
                 icon = {
-                    /*Icon(
-                      painter = painterResource(id = screen.drawResId),
-                      contentDescription = stringResource(id = screen.label)
-                    )*/
+                    Icon(
+                        painter = rememberDrawablePainter(drawable = screen.image.drawable(LocalContext.current)),
+                        contentDescription = null,
+                        modifier = Modifier.padding(bottom = 4.dp),
+                    )
                 },
                 label = {
                     Text(
