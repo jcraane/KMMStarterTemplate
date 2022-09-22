@@ -22,7 +22,7 @@ object Versions {
     const val androidNavigationVersion = "2.5.2"
     const val koinVersion = "3.2.0"
     const val androidLifecycle = "2.6.0-alpha02"
-    const val kmpNativeCoroutinesVersion = "0.12.6-new-mm"
+    const val kmpNativeCoroutinesVersion = "0.13.0"
     const val kmmResources = "1.0.0-alpha10"
     const val kmmImages = "1.0.0-alpha11"
     const val accompanist = "0.25.1"
