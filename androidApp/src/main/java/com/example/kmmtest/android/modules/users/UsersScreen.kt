@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.users.domain.User
 import com.example.kmmtest.users.viewmodel.UsersViewModel
@@ -29,7 +28,7 @@ fun UsersScreen(
     viewModel: UsersViewModel,
     modifier: Modifier = Modifier,
     onUserClicked: (User) -> Unit,
-    ) {
+) {
     val usersData: DataState<List<User>> by viewModel.users.collectAsStateWithLifecycle(DataState.Empty())
     UsersScreenContent(usersData, modifier, onUserClicked)
 }
