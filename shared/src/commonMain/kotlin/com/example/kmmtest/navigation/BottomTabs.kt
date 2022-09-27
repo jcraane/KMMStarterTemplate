@@ -7,6 +7,6 @@ enum class BottomTabs(
     val label: String,
     val image: Image,
 ) {
-    USERS("users", L.BottomTab().users(), Images.IC_BOTTOMMENU_HOME),
-    PROFILE("profile", L.BottomTab().profile(), Images.IC_BOTTOMMENU_PROFILE)
+    USERS("users", L.BottomTab().users.tabLabel(), Images.IC_BOTTOMMENU_HOME),
+    SETTINGS("settings", L.BottomTab().settings.tabLabel(), Images.IC_SETTINGS)
 }

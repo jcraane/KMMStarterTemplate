@@ -5,15 +5,36 @@ class L {
   companion object {
     val bottomTab: BottomTab = BottomTab()
   }
-  class BottomTab {
-    operator fun get(key: String): String? = when(key) {
-      "users" -> users()
-      "profile" -> profile()
-      else -> null
+  data class BottomTab(
+    val settings: Settings = Settings(),
+    val users: Users = Users()) {
+    data class Settings(
+      val options: Options = Options()) {
+      class Options {
+        operator fun get(key: String): String? = when(key) {
+          "setting1" -> setting1()
+          "setting2" -> setting2()
+          "setting3" -> setting3()
+          else -> null
+        }
+      }
+      operator fun get(key: String): String? = when(key) {
+        "tabLabel" -> tabLabel()
+        else -> null
+      }
+    }
+    class Users {
+      operator fun get(key: String): String? = when(key) {
+        "tabLabel" -> tabLabel()
+        else -> null
+      }
     }
   }
 }
 
 
-expect fun L.BottomTab.profile(): String
-expect fun L.BottomTab.users(): String
+expect fun L.BottomTab.Settings.Options.setting1(): String
+expect fun L.BottomTab.Settings.Options.setting2(): String
+expect fun L.BottomTab.Settings.Options.setting3(): String
+expect fun L.BottomTab.Settings.tabLabel(): String
+expect fun L.BottomTab.Users.tabLabel(): String

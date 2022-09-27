@@ -5,5 +5,6 @@ object Images {
 	val IC_BOTTOMMENU_PROFILE: Image = Image("ic_bottommenu_profile")
 	val IC_BOTTOMMENU_HOME: Image = Image("ic_bottommenu_home")
 	val PNG_ICON: Image = Image("png_icon")
+	val IC_SETTINGS: Image = Image("ic_settings")
 }
 

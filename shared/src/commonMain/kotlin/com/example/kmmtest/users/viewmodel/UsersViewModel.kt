@@ -2,6 +2,7 @@ package com.example.kmmtest.users.viewmodel
 
 import com.example.kmmtest.platform.SharedViewModel
 import com.example.kmmtest.platform.scope
+import com.example.kmmtest.users.domain.User
 import com.example.kmmtest.users.repository.UserRepository
 import com.example.kmmtest.util.DataState
 import kotlinx.coroutines.flow.SharingStarted
@@ -11,4 +12,8 @@ class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
     val users = userRepository.getAll().stateIn(
         scope, SharingStarted.WhileSubscribed(), DataState.Empty()
     )
+
+    fun onUserSelected(user: User) {
+        println("ON USER SELECTED")
+    }
 }

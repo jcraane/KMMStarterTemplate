@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.kmmtest.android.modules.profile.ProfileScreen
+import com.example.kmmtest.android.modules.settings.SettingsScreen
 import com.example.kmmtest.android.modules.users.UsersScreen
 import com.example.kmmtest.navigation.BottomTabs
 import com.example.kmmtest.users.viewmodel.UsersViewModel
@@ -25,8 +26,8 @@ fun StarterAppNavHost(
             UsersScreen(viewModel = usersViewModel)
         }
 
-        composable(route = BottomTabs.PROFILE.route) {
-            ProfileScreen()
+        composable(route = BottomTabs.SETTINGS.route) {
+            SettingsScreen()
         }
     }
 }

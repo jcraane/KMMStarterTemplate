@@ -96,7 +96,7 @@ private fun AppBottomNavigation(
                     Icon(
                         painter = rememberDrawablePainter(drawable = screen.image.drawable(LocalContext.current)),
                         contentDescription = null,
-                        modifier = Modifier.padding(bottom = 4.dp),
+                        modifier = Modifier.padding(bottom = 4.dp).size(22.dp),
                     )
                 },
                 label = {
