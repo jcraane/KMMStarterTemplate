@@ -1,6 +1,14 @@
 plugins {
     id(Plugins.androidApplication)
     kotlin(Plugins.kotlinAndroid)
+    id(Plugins.detekt).version(Versions.detekt)
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    autoCorrect = true
+    config = files("$projectDir/../config/detekt.yml")
+    baseline = file("$projectDir/../config/baseline.xml")
 }
 
 android {
@@ -57,4 +65,14 @@ dependencies {
     implementation(Dependencies.Koin.core)
 
     implementation(Dependencies.JetBrains.Ktor.clientLogging)
+
+    detektPlugins(Dependencies.Detekt.ktLint)
+    detektPlugins(Dependencies.Detekt.twitterCompose)
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+    jvmTarget = "1.8"
+}
+tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
+    jvmTarget = "1.8"
 }

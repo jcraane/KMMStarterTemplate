@@ -9,6 +9,7 @@ object Plugins {
     const val kmpNativeCoroutines = "com.rickclephas.kmp.nativecoroutines"
     const val kmmResource = "dev.jamiecraane.plugins.kmmresources"
     const val kmmImages = "dev.jamiecraane.plugins.kmmimages"
+    const val detekt = "io.gitlab.arturbosch.detekt"
 }
 
 object Versions {
@@ -26,6 +27,8 @@ object Versions {
     const val kmmResources = "1.0.0-alpha10"
     const val kmmImages = "1.0.0-alpha11"
     const val accompanist = "0.25.1"
+    const val detekt = "1.21.0"
+    const val detektTwitterCompose = "0.0.16"
 }
 
 object Dependencies {
@@ -67,5 +70,10 @@ object Dependencies {
         const val test = "io.insert-koin:koin-test:${Versions.koinVersion}"
         const val android = "io.insert-koin:koin-android:${Versions.koinVersion}"
         const val compose = "io.insert-koin:koin-core:${Versions.koinVersion}"
+    }
+
+    object Detekt {
+        const val ktLint = "io.gitlab.arturbosch.detekt:detekt-formatting:${Versions.detekt}"
+        const val twitterCompose = "com.twitter.compose.rules:detekt:${Versions.detektTwitterCompose}"
     }
 }

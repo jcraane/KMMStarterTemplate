@@ -38,7 +38,7 @@ fun UsersScreen(viewModel: UsersViewModel, modifier: Modifier = Modifier) {
     }
 }
 
-//todo add on click listener and navigate to profile into
+// todo add on click listener and navigate to profile into
 @Composable
 private fun UserRow(user: User, onUserClicked: (User) -> Unit) {
     Box(
@@ -47,7 +47,7 @@ private fun UserRow(user: User, onUserClicked: (User) -> Unit) {
                 remember { MutableInteractionSource() },
                 rememberRipple(bounded = true),
                 onClick = {
-                          onUserClicked(user)
+                    onUserClicked(user)
                 },
             )
             .fillMaxWidth()

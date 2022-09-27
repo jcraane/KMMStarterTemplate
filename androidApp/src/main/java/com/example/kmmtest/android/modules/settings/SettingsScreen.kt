@@ -9,8 +9,9 @@ import androidx.compose.ui.unit.dp
 import com.example.kmmstartertemplate.R.*
 
 @Composable
-fun SettingsScreen() {
+fun SettingsScreen(modifier: Modifier = Modifier,) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(stringResource(string.l_bottomTab_settings_options_setting1))

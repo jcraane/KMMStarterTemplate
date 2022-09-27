@@ -1,11 +1,8 @@
 package com.example.kmmtest.android.ui
 
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.kmmtest.android.StarterAppNavHost
 import com.example.kmmtest.navigation.BottomTabs
@@ -14,11 +11,13 @@ import com.example.kmmtest.users.viewmodel.UsersViewModel
 @Composable
 fun MainScreen(
     usersViewModel: UsersViewModel,
+    modifier: Modifier = Modifier,
 ) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     val navHostController = rememberNavController()
 
     Scaffold(
+        modifier = modifier,
         scaffoldState = scaffoldState,
         topBar = {
             StarterAppTopAppBar()
@@ -29,5 +28,4 @@ fun MainScreen(
     ) {
         StarterAppNavHost(navController = navHostController, usersViewModel = usersViewModel)
     }
-
 }

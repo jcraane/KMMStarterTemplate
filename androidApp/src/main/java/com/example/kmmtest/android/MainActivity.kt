@@ -3,7 +3,6 @@ package com.example.kmmtest.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.kmmstartertemplate.android.R
 import com.example.kmmtest.Images
 import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.MainScreen

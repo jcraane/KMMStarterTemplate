@@ -7,8 +7,7 @@ import com.example.kmmtest.Image
 
 /**
  * Extension function to obtain a drawable from an Image.
- * 
- * @param context The Android context which is used to obtain the resources from.
+ * * @param context The Android context which is used to obtain the resources from.
  * @return Drawable?
  */
 fun Image.drawable(context: Context): Drawable? {
