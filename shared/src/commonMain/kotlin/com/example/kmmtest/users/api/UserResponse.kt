@@ -4,4 +4,4 @@ package com.example.kmmtest.users.api
 data class UserListResponse(val result: List<UserResponse>)
 
 @kotlinx.serialization.Serializable
-data class UserResponse(val name: String)
+data class UserResponse(val id: String, val name: String)

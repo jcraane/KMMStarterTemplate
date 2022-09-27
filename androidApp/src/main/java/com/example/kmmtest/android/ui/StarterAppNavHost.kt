@@ -1,13 +1,18 @@
-package com.example.kmmtest.android
+package com.example.kmmtest.android.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import com.example.kmmtest.android.modules.profile.ProfileScreen
 import com.example.kmmtest.android.modules.settings.SettingsScreen
 import com.example.kmmtest.android.modules.users.UsersScreen
 import com.example.kmmtest.navigation.BottomTabs
+import com.example.kmmtest.navigation.Routes
 import com.example.kmmtest.users.viewmodel.UsersViewModel
 
 @Composable
@@ -22,13 +27,33 @@ fun StarterAppNavHost(
         modifier = modifier,
     ) {
         composable(route = BottomTabs.USERS.route) {
-            UsersScreen(viewModel = usersViewModel)
+            UsersScreen(viewModel = usersViewModel, onUserClicked = { selectedUser ->
+                navController.navigateSingleTopTo(Routes.Profile.getNavigateRoute(selectedUser.id))
+            })
         }
 
         composable(route = BottomTabs.SETTINGS.route) {
             SettingsScreen()
         }
+
+        composable(
+            route = Routes.Profile.route,
+            arguments = listOf(
+                navArgument(Routes.Profile.ARG_USER_ID) {
+                    NavType.StringType
+                }
+            )
+        ) { entry ->
+            val userId = entry.arguments?.getString(Routes.Profile.ARG_USER_ID) ?: ""
+            ProfileScreen(usersViewModel, userId)
+        }
     }
 }
 
-fun NavHostController.navigateSingleTopTo(route: String) = this.navigate(route) { launchSingleTop = true }
+fun NavHostController.navigateSingleTopTo(route: String) = this.navigate(route) {
+    popUpTo(this@navigateSingleTopTo.graph.findStartDestination().id) {
+        saveState = true
+    }
+    launchSingleTop = true
+    restoreState = true
+}

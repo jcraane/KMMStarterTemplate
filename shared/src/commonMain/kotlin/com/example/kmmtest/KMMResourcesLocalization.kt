@@ -6,8 +6,19 @@ class L {
     val bottomTab: BottomTab = BottomTab()
   }
   data class BottomTab(
+    val profile: Profile = Profile(),
     val settings: Settings = Settings(),
     val users: Users = Users()) {
+    data class Profile(
+      val fields: Fields = Fields()) {
+      class Fields {
+        operator fun get(key: String): String? = when(key) {
+          "name" -> name()
+          "id" -> id()
+          else -> null
+        }
+      }
+    }
     data class Settings(
       val options: Options = Options()) {
       class Options {
@@ -33,6 +44,8 @@ class L {
 }
 
 
+expect fun L.BottomTab.Profile.Fields.id(): String
+expect fun L.BottomTab.Profile.Fields.name(): String
 expect fun L.BottomTab.Settings.Options.setting1(): String
 expect fun L.BottomTab.Settings.Options.setting2(): String
 expect fun L.BottomTab.Settings.Options.setting3(): String

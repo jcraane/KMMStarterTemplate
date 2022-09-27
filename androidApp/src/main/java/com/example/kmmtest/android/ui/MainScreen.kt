@@ -4,7 +4,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.kmmtest.android.StarterAppNavHost
 import com.example.kmmtest.navigation.BottomTabs
 import com.example.kmmtest.users.viewmodel.UsersViewModel
 

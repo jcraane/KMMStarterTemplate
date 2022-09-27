@@ -17,3 +17,11 @@ bottomTab:
       setting3:
         en: Setting 3
         nl: Instelling 3
+  profile:
+    fields:
+      name:
+        en: Name
+        nl: Naam
+      id:
+        en: Id
+        nl: Id

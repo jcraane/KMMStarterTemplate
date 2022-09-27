@@ -14,12 +14,12 @@ class UserRepository(val userApi: UserApi) {
 
         runSuspendCatching {
             val users = userApi.getAllUsers().result.map { userResponse ->
-                User(userResponse.name)
+                User(userResponse.id, userResponse.name)
             }
 
             emit(DataState.Success(users))
         }.onFailure {
-            emit(DataState.Error(it))
+            emit(DataState.Error(it, "Error retrieving users"))
         }
     }
 }

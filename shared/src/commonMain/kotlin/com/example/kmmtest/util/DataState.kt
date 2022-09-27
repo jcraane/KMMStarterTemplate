@@ -18,6 +18,7 @@ sealed class DataState<out T> {
     data class Error(
         /** The exception that occurred while loading the resource. */
         val exception: Throwable,
+        val message: String,
     ) : DataState<Nothing>()
 
     val currentValue: T?
@@ -35,4 +36,11 @@ sealed class DataState<out T> {
             is Error -> exception
             is Empty -> null
         }
+
+    fun <R> map(transform: (T) -> R): DataState<R> = when (this) {
+        is Success -> Success(transform(value))
+        is Empty -> Empty()
+        is Error -> Error(exception, message)
+        is Loading -> Loading(previousException, null, null)
+    }
 }

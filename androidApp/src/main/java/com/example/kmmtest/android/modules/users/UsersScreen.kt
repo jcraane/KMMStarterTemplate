@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.users.domain.User
 import com.example.kmmtest.users.viewmodel.UsersViewModel
@@ -24,21 +25,32 @@ import com.example.kmmtest.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
-fun UsersScreen(viewModel: UsersViewModel, modifier: Modifier = Modifier) {
+fun UsersScreen(
+    viewModel: UsersViewModel,
+    modifier: Modifier = Modifier,
+    onUserClicked: (User) -> Unit,
+    ) {
     val usersData: DataState<List<User>> by viewModel.users.collectAsStateWithLifecycle(DataState.Empty())
+    UsersScreenContent(usersData, modifier, onUserClicked)
+}
 
-    Box(modifier = modifier) {
+@Composable
+private fun UsersScreenContent(
+    usersData: DataState<List<User>>,
+    modifier: Modifier = Modifier,
+    onUserClicked: (User) -> Unit,
+) {
+    Box(modifier) {
         usersData.ToComposable() { users ->
             LazyColumn() {
                 items(users) { user ->
-                    UserRow(user = user, onUserClicked = viewModel::onUserSelected)
+                    UserRow(user = user, onUserClicked = onUserClicked)
                 }
             }
         }
     }
 }
 
-// todo add on click listener and navigate to profile into
 @Composable
 private fun UserRow(user: User, onUserClicked: (User) -> Unit) {
     Box(

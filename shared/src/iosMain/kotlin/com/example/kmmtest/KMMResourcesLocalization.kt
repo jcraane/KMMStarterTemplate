@@ -7,6 +7,14 @@ import platform.Foundation.localizedStringWithFormat
 
 var localizationBundle = NSBundle.mainBundle()
 
+actual fun L.BottomTab.Profile.Fields.id(): String {
+    val localizedString = localizationBundle.localizedStringForKey("l.bottomTab.profile.fields.id", null, null)
+    return NSString.localizedStringWithFormat(localizedString)
+}
+actual fun L.BottomTab.Profile.Fields.name(): String {
+    val localizedString = localizationBundle.localizedStringForKey("l.bottomTab.profile.fields.name", null, null)
+    return NSString.localizedStringWithFormat(localizedString)
+}
 actual fun L.BottomTab.Settings.Options.setting1(): String {
     val localizedString = localizationBundle.localizedStringForKey("l.bottomTab.settings.options.setting1", null, null)
     return NSString.localizedStringWithFormat(localizedString)
