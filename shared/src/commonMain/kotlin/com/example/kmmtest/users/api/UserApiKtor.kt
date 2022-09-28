@@ -6,6 +6,7 @@ import io.ktor.client.request.*
 
 class UserApiKtor(private val httpClient: HttpClient) : UserApi {
     override suspend fun getAllUsers(): UserListResponse {
-        return httpClient.get("http://10.0.2.2:3001/users").body()
+//        return httpClient.get("http://10.0.2.2:3001/users").body()
+        return httpClient.get("http://localhost:3001/users").body()
     }
 }

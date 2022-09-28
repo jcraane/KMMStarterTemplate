@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		7C4D5DE968AF3493AF7E6048 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8BC2D8B0CC68456564B95D /* Pods_iosApp.framework */; };
+		813DBE8D431C127FB93A0532 /* ObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DB3DE3AB4858C1E1D2C6D /* ObservingView.swift */; };
 		813DBF65CC24E09435E77087 /* Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DB94D1656379E61EE0C96 /* Koin.swift */; };
 		8C5BAD5628E4BECA006BD7EC /* UsersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BAD5528E4BECA006BD7EC /* UsersScreen.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +24,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813DB3DE3AB4858C1E1D2C6D /* ObservingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservingView.swift; sourceTree = "<group>"; };
 		813DB94D1656379E61EE0C96 /* Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Koin.swift; sourceTree = "<group>"; };
 		8C5BAD5528E4BECA006BD7EC /* UsersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersScreen.swift; sourceTree = "<group>"; };
 		A543140D4ACC73D9E4B436F7 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,10 +109,27 @@
 			path = di;
 			sourceTree = "<group>";
 		};
+		813DB670331E999B19BE5D23 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				813DBA90B7A2BF23BBB68DAF /* ui */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		813DBA90B7A2BF23BBB68DAF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				813DB3DE3AB4858C1E1D2C6D /* ObservingView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		8C5BAD5328E4BEB0006BD7EC /* modules */ = {
 			isa = PBXGroup;
 			children = (
 				8C5BAD5428E4BEB9006BD7EC /* users */,
+				813DB670331E999B19BE5D23 /* common */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -241,6 +260,7 @@
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				8C5BAD5628E4BECA006BD7EC /* UsersScreen.swift in Sources */,
 				813DBF65CC24E09435E77087 /* Koin.swift in Sources */,
+				813DBE8D431C127FB93A0532 /* ObservingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

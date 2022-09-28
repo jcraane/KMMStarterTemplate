@@ -10,9 +10,11 @@ import kotlinx.coroutines.flow.flow
 
 class UserRepository(val userApi: UserApi) {
     fun getAll(): Flow<DataState<List<User>>> = flow {
+        println("getAll in repository")
         emit(DataState.Loading())
 
         runSuspendCatching {
+            println("Trying to get users")
             val users = userApi.getAllUsers().result.map { userResponse ->
                 User(userResponse.id, userResponse.name)
             }

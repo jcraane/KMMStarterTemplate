@@ -10,12 +10,12 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
-    val users = userRepository.getAll().stateIn(
+    val users: StateFlow<DataState<List<User>>> = userRepository.getAll().stateIn(
         scope, SharingStarted.WhileSubscribed(), DataState.Empty()
     )
 
     private val _selectedUserId = MutableStateFlow<String?>(null)
-    val selectedUser = combine(users, _selectedUserId) { users, userId ->
+    val selectedUser: Flow<DataState<User>> = combine(users, _selectedUserId) { users, userId ->
         if (userId != null && users is DataState.Success) {
             users.value.find { it.id == userId }?.let { user ->
                 DataState.Success(user)
@@ -29,5 +29,8 @@ class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
         _selectedUserId.value = userId
     }
 
-    fun greet() = "Hello From ViewModel"
+    fun greet(): String {
+        println("calling greet")
+        return "Hello From ViewModel"
+    }
 }
