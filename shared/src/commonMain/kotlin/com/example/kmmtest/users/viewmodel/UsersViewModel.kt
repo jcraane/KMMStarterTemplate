@@ -28,9 +28,4 @@ class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
     fun setSelectedUserId(userId: String) {
         _selectedUserId.value = userId
     }
-
-    fun greet(): String {
-        println("calling greet")
-        return "Hello From ViewModel"
-    }
 }

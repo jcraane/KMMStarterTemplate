@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Combine
+import KMPNativeCoroutinesCore
 
 /*
 private class ObservableModel<State, Action>: ObservableObject {
@@ -39,7 +40,6 @@ private class ObservableModel<State>: ObservableObject {
 
 
 public struct ObservingView<State, Content>: View where Content: View {
-
     @ObservedObject private var model: ObservableModel<State>
 
     private let content: (State) -> Content

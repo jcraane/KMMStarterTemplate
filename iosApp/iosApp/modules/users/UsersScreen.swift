@@ -13,28 +13,24 @@ import KMPNativeCoroutinesCombine
 
 struct UsersScreen: View {
     let usersViewModel: UsersViewModel = Koin.instance.get()
-    var cancellable: AnyCancellable?
-
-    init() {
-        cancellable = createPublisher(for: usersViewModel.usersNative)
-                .receive(on: DispatchQueue.main)
-                .sink { completion in
-                    print("Received completion: \(completion)")
-                } receiveValue: { value in
-                    print("Received value: \(value)")
-                }
-    }
 
     var body: some View {
-        Text(usersViewModel.greet())
-
-
-        Text("Hello")
-        /*ObservingView(statePublisher: createPublisher(for: publisher),
+        ObservingView(statePublisher: createPublisher(for: usersViewModel.usersNative).assertNoFailure().eraseToAnyPublisher(),
                 content: { state in
+                    if (state is DataStateSuccess) {
+                        Text("Success")
+//                        let cast = (state as? DataStateSuccess)
+                        Text("\(state)")
 
-                    // your view here
-                })*/
+//                        cast?.value.forEach { int8 in
+
+//                            Text(int8)
+//                        }
+                        /*ForEach(cast.value) { user in
+                            Text("User")
+                        }*/
+                    }
+                })
     }
 }
 
