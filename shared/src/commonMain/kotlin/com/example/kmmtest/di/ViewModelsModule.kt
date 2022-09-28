@@ -1,11 +1,10 @@
-package com.example.kmmtest.android
+package com.example.kmmtest.di
 
 import com.example.kmmtest.users.viewmodel.UsersViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val viewModelsModule = module {
-    viewModel {
+fun viewModelModule() = module {
+    single {
         UsersViewModel(userRepository = get())
     }
 }

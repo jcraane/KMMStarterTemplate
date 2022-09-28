@@ -15,7 +15,7 @@ class KMMStarterApp : Application() {
         super.onCreate()
 
         localizationContext = this
-        initKoin(createHttpLoggingSpec(), appModule = appModule) {
+        initKoin(createHttpLoggingSpec(), viewModelsModule = viewModelsModule) {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@KMMStarterApp)
         }
