@@ -38,3 +38,8 @@ fun initKoin(
         )
     }
 }
+
+/**
+ * Convenience function to initialize Koin from iOS without having to pass in all (default) the module definitions.
+ */
+fun initKoinIos(httpLoggingSpec: HttpLoggingSpec) = initKoin(httpLoggingSpec)
