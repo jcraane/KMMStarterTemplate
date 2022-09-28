@@ -18,17 +18,14 @@ struct UsersScreen: View {
         ObservingView(statePublisher: createPublisher(for: usersViewModel.usersNative).assertNoFailure().eraseToAnyPublisher(),
                 content: { state in
                     if (state is DataStateSuccess) {
-                        Text("Success")
-//                        let cast = (state as? DataStateSuccess)
-                        Text("\(state)")
+                        let users = (state as? DataStateSuccess)?.value as? [User]
 
-//                        cast?.value.forEach { int8 in
-
-//                            Text(int8)
-//                        }
-                        /*ForEach(cast.value) { user in
-                            Text("User")
-                        }*/
+                        ForEach(users!, id: \.id) { user in
+                            HStack {
+                                Text(user.id)
+                                Text(user.name)
+                            }
+                        }
                     }
                 })
     }
