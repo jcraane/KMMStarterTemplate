@@ -6,6 +6,8 @@ import com.example.kmmtest.users.domain.User
 import com.example.kmmtest.users.repository.UserRepository
 import com.example.kmmtest.util.DataState
 import kotlinx.coroutines.flow.*
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
     val users = userRepository.getAll().stateIn(
@@ -26,4 +28,6 @@ class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {
     fun setSelectedUserId(userId: String) {
         _selectedUserId.value = userId
     }
+
+    fun greet() = "Hello From ViewModel"
 }

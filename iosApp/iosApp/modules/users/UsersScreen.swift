@@ -7,10 +7,19 @@
 //
 
 import SwiftUI
+import shared
 
 struct UsersScreen: View {
+    let usersViewModel: UsersViewModel = Koin.instance.get()
+
     var body: some View {
-        Text("Users will be displayed here!!!")
+        Text(usersViewModel.greet())
+    }
+}
+
+struct UsersScreenContent: View {
+    var body: some View {
+        Text("jds")
     }
 }
 
