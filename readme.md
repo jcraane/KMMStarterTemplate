@@ -18,3 +18,7 @@
 
 ### Opening the iOS project
 Open the `iosApp.xcworkspace` in AppCode/Xcode and you should be able to run it.
+
+## Todo
+
+Add logging library

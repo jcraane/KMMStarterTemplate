@@ -8,7 +8,7 @@ import com.example.kmmtest.util.runSuspendCatching
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class UserRepository(val userApi: UserApi) {
+class UserRepository(private val userApi: UserApi) {
     fun getAll(): Flow<DataState<List<User>>> = flow {
         println("getAll in repository")
         emit(DataState.Loading())

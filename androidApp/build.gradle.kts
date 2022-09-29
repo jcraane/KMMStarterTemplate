@@ -55,6 +55,7 @@ dependencies {
     implementation(Dependencies.Accompanist.drawablePainter)
 
     implementation(Dependencies.Compose.lifecycle)
+    implementation(Dependencies.JetBrains.kotlinDateTime)
 
     // Navigation
     implementation(Dependencies.Android.navigation)
