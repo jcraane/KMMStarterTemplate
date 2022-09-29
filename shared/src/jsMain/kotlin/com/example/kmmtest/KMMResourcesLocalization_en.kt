@@ -6,12 +6,7 @@ package com.example.kmmtest
 internal fun localizations_en(): Map<String, String> {
     val localizations = mutableMapOf<String, String>()
 
-	localizations["l.bottomTab.profile.fields.id"] = "Id"
-	localizations["l.bottomTab.profile.fields.name"] = "Name"
-	localizations["l.bottomTab.settings.options.setting1"] = "Setting 1"
-	localizations["l.bottomTab.settings.options.setting2"] = "Setting 2"
-	localizations["l.bottomTab.settings.options.setting3"] = "Setting 3"
-	localizations["l.bottomTab.settings.tabLabel"] = "Settings"
-	localizations["l.bottomTab.users.tabLabel"] = "Users"
+	localizations["l.bottomTab.season.tabLabel"] = "Season"
+	localizations["l.bottomTab.standings.tabLabel"] = "Standings"
 	return localizations
 }

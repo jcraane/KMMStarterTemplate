@@ -1,27 +1,9 @@
 bottomTab:
-  users:
+  season:
     tabLabel:
-      en: Users
-      nl: Gebruikers
-  settings:
+      en: Season
+      nl: Seizoen
+  standings:
     tabLabel:
-      en: Settings
-      nl: Instellingen
-    options:
-      setting1:
-        en: Setting 1
-        nl: Instelling 1
-      setting2:
-        en: Setting 2
-        nl: Instelling 2
-      setting3:
-        en: Setting 3
-        nl: Instelling 3
-  profile:
-    fields:
-      name:
-        en: Name
-        nl: Naam
-      id:
-        en: Id
-        nl: Id
+      en: Standings
+      nl: Tussenstand

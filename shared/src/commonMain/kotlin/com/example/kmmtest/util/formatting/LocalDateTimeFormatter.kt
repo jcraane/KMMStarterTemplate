@@ -13,4 +13,10 @@ interface LocalDateTimeFormatter {
     }
 }
 
+class DefaultLocalDateTimeFormatter : LocalDateTimeFormatter {
+    override fun format(date: LocalDateTime, timeZone: TimeZone, type: LocalDateTimeFormatter.Type): String {
+        return date.toString()
+    }
+}
+
 

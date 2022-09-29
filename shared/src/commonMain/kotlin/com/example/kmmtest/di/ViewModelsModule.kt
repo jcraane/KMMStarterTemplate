@@ -2,6 +2,8 @@ package com.example.kmmtest.di
 
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
 import com.example.kmmtest.users.viewmodel.UsersViewModel
+import com.example.kmmtest.util.formatting.DefaultLocalDateTimeFormatter
+import com.example.kmmtest.util.formatting.LocalDateTimeFormatter
 import org.koin.dsl.module
 
 fun viewModelModule() = module {
@@ -9,7 +11,11 @@ fun viewModelModule() = module {
         UsersViewModel(userRepository = get())
     }
 
+    single<LocalDateTimeFormatter> {
+        DefaultLocalDateTimeFormatter()
+    }
+
     single {
-        SeasonViewModel(f1Repository = get())
+        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get())
     }
 }

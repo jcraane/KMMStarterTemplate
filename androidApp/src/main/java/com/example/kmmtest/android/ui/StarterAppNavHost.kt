@@ -8,7 +8,6 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.kmmtest.android.modules.profile.ProfileScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.settings.SettingsScreen
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
@@ -30,15 +29,13 @@ fun StarterAppNavHost(
     ) {
         composable(route = BottomTabs.SEASON.route) {
             SeasonScreen(seasonViewModel)
-            /*UsersScreen(viewModel = usersViewModel, onUserClicked = { selectedUser ->
-                navController.navigateSingleTopTo(Routes.Profile.getNavigateRoute(selectedUser.id))
-            })*/
         }
 
-        composable(route = BottomTabs.SETTINGS.route) {
+        composable(route = BottomTabs.STANDINGS.route) {
             SettingsScreen()
         }
 
+/*
         composable(
             route = Routes.Profile.route,
             arguments = listOf(
@@ -50,6 +47,7 @@ fun StarterAppNavHost(
             val userId = entry.arguments?.getString(Routes.Profile.ARG_USER_ID) ?: ""
             ProfileScreen(usersViewModel, userId)
         }
+*/
     }
 }
 

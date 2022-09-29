@@ -6,35 +6,15 @@ class L {
     val bottomTab: BottomTab = BottomTab()
   }
   data class BottomTab(
-    val profile: Profile = Profile(),
-    val settings: Settings = Settings(),
-    val users: Users = Users()) {
-    data class Profile(
-      val fields: Fields = Fields()) {
-      class Fields {
-        operator fun get(key: String): String? = when(key) {
-          "name" -> name()
-          "id" -> id()
-          else -> null
-        }
-      }
-    }
-    data class Settings(
-      val options: Options = Options()) {
-      class Options {
-        operator fun get(key: String): String? = when(key) {
-          "setting1" -> setting1()
-          "setting2" -> setting2()
-          "setting3" -> setting3()
-          else -> null
-        }
-      }
+    val season: Season = Season(),
+    val standings: Standings = Standings()) {
+    class Season {
       operator fun get(key: String): String? = when(key) {
         "tabLabel" -> tabLabel()
         else -> null
       }
     }
-    class Users {
+    class Standings {
       operator fun get(key: String): String? = when(key) {
         "tabLabel" -> tabLabel()
         else -> null
@@ -44,10 +24,5 @@ class L {
 }
 
 
-expect fun L.BottomTab.Profile.Fields.id(): String
-expect fun L.BottomTab.Profile.Fields.name(): String
-expect fun L.BottomTab.Settings.Options.setting1(): String
-expect fun L.BottomTab.Settings.Options.setting2(): String
-expect fun L.BottomTab.Settings.Options.setting3(): String
-expect fun L.BottomTab.Settings.tabLabel(): String
-expect fun L.BottomTab.Users.tabLabel(): String
+expect fun L.BottomTab.Season.tabLabel(): String
+expect fun L.BottomTab.Standings.tabLabel(): String

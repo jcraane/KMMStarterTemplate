@@ -21,13 +21,8 @@ private fun getString(key: String, vararg formatArgs: String): String {
     } ?: ""
 }
 
-actual fun L.BottomTab.Profile.Fields.id(): String = getString("l.bottomTab.profile.fields.id")
-actual fun L.BottomTab.Profile.Fields.name(): String = getString("l.bottomTab.profile.fields.name")
-actual fun L.BottomTab.Settings.Options.setting1(): String = getString("l.bottomTab.settings.options.setting1")
-actual fun L.BottomTab.Settings.Options.setting2(): String = getString("l.bottomTab.settings.options.setting2")
-actual fun L.BottomTab.Settings.Options.setting3(): String = getString("l.bottomTab.settings.options.setting3")
-actual fun L.BottomTab.Settings.tabLabel(): String = getString("l.bottomTab.settings.tabLabel")
-actual fun L.BottomTab.Users.tabLabel(): String = getString("l.bottomTab.users.tabLabel")
+actual fun L.BottomTab.Season.tabLabel(): String = getString("l.bottomTab.season.tabLabel")
+actual fun L.BottomTab.Standings.tabLabel(): String = getString("l.bottomTab.standings.tabLabel")
 
 val localizations = {
     val localizations = mutableMapOf<String, Map<String, String>>()

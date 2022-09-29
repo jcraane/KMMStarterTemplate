@@ -15,8 +15,6 @@ fun SettingsScreen(modifier: Modifier = Modifier,) {
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Text(stringResource(string.l_bottomTab_settings_options_setting1))
-        Text(stringResource(string.l_bottomTab_settings_options_setting2))
-        Text(stringResource(string.l_bottomTab_settings_options_setting3))
+        Text("Nothing Here")
     }
 }
