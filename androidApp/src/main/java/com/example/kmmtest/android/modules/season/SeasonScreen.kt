@@ -42,7 +42,6 @@ private fun SeasonScreenContent(
         output.ToComposable { season ->
             LazyColumn(
                 contentPadding = PaddingValues(vertical = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 items(season.races) { race ->
                     RaceRow(race)
@@ -64,7 +63,7 @@ private fun RaceRow(race: RaceViewModel) {
             )
             .padding(horizontal = 16.dp)
     ) {
-        Column() {
+        Column(modifier = Modifier.padding(top = 4.dp)) {
             Title(text = race.title)
             SubTitle(text = race.subTitle)
             Caption(text = race.caption)
