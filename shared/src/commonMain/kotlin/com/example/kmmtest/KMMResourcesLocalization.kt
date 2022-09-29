@@ -3,18 +3,25 @@ package com.example.kmmtest
 
 class L {
   companion object {
+    val app: App = App()
     val bottomTab: BottomTab = BottomTab()
   }
+  class App {
+    operator fun get(key: String): String? = when(key) {
+      "title" -> title()
+      else -> null
+    }
+  }
   data class BottomTab(
-    val season: Season = Season(),
-    val standings: Standings = Standings()) {
-    class Season {
+    val driverStandings: DriverStandings = DriverStandings(),
+    val season: Season = Season()) {
+    class DriverStandings {
       operator fun get(key: String): String? = when(key) {
         "tabLabel" -> tabLabel()
         else -> null
       }
     }
-    class Standings {
+    class Season {
       operator fun get(key: String): String? = when(key) {
         "tabLabel" -> tabLabel()
         else -> null
@@ -24,5 +31,6 @@ class L {
 }
 
 
+expect fun L.App.title(): String
+expect fun L.BottomTab.DriverStandings.tabLabel(): String
 expect fun L.BottomTab.Season.tabLabel(): String
-expect fun L.BottomTab.Standings.tabLabel(): String

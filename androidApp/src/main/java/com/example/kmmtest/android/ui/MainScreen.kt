@@ -28,7 +28,10 @@ fun MainScreen(
             MainBottomBar(navController = navHostController, items = BottomTabs.values().toList())
         }
     ) { paddingValues ->
-        StarterAppNavHost(navController = navHostController, usersViewModel = usersViewModel, seasonViewModel = seasonViewModel, modifier
-        = Modifier.padding(paddingValues))
+        StarterAppNavHost(
+            navController = navHostController, usersViewModel = usersViewModel, seasonViewModel = seasonViewModel,
+            modifier =
+            Modifier.padding(paddingValues)
+        )
     }
 }

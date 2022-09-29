@@ -28,4 +28,3 @@ fun Caption(text: String, modifier: Modifier = Modifier,) {
         style = MaterialTheme.typography.caption
     )
 }
-

@@ -6,7 +6,7 @@ import kotlinx.datetime.toInstant
 import java.text.DateFormat
 import java.util.*
 
-class AndroidLocalDateTimeFormatter(private val dateFormat: DateFormat = DateFormat.getDateInstance()) : LocalDateTimeFormatter {
+class AndroidLocalDateTimeFormatter(private val dateFormat: DateFormat = DateFormat.getDateTimeInstance()) : LocalDateTimeFormatter {
     override fun format(date: LocalDateTime, timeZone: TimeZone, type: LocalDateTimeFormatter.Type): String {
         val instant = date.toInstant(timeZone)
         return dateFormat.format(Date(instant.toEpochMilliseconds()))

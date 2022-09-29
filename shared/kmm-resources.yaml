@@ -1,9 +1,13 @@
+app:
+  title:
+    en: F1 insights
+    nl: Formule 1 inzicht
 bottomTab:
   season:
     tabLabel:
       en: Season
       nl: Seizoen
-  standings:
+  driverStandings:
     tabLabel:
-      en: Standings
-      nl: Tussenstand
+      en: Driver Standings
+      nl: WK stand

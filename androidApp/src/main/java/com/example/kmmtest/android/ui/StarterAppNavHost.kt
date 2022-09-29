@@ -4,15 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.settings.SettingsScreen
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
 import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.navigation.Routes
 import com.example.kmmtest.users.viewmodel.UsersViewModel
 
 @Composable
@@ -31,7 +28,7 @@ fun StarterAppNavHost(
             SeasonScreen(seasonViewModel)
         }
 
-        composable(route = BottomTabs.STANDINGS.route) {
+        composable(route = BottomTabs.DRIVER_STANDINGS.route) {
             SettingsScreen()
         }
 

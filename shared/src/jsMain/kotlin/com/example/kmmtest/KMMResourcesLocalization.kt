@@ -21,8 +21,9 @@ private fun getString(key: String, vararg formatArgs: String): String {
     } ?: ""
 }
 
+actual fun L.App.title(): String = getString("l.app.title")
+actual fun L.BottomTab.DriverStandings.tabLabel(): String = getString("l.bottomTab.driverStandings.tabLabel")
 actual fun L.BottomTab.Season.tabLabel(): String = getString("l.bottomTab.season.tabLabel")
-actual fun L.BottomTab.Standings.tabLabel(): String = getString("l.bottomTab.standings.tabLabel")
 
 val localizations = {
     val localizations = mutableMapOf<String, Map<String, String>>()
