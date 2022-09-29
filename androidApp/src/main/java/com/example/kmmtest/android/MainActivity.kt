@@ -3,6 +3,7 @@ package com.example.kmmtest.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Surface
 import com.example.kmmtest.Images
 import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.MainScreen
@@ -20,7 +21,9 @@ class MainActivity : ComponentActivity() {
         Images.IC_BOTTOMMENU_HOME.drawable(this)
         setContent {
             MyApplicationTheme {
-                MainScreen(usersViewModel, seasonViewModel)
+                Surface {
+                    MainScreen(usersViewModel, seasonViewModel)
+                }
             }
         }
     }
