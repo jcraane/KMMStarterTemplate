@@ -21,4 +21,8 @@ Open the `iosApp.xcworkspace` in AppCode/Xcode and you should be able to run it.
 
 ## Todo
 
-Add logging library
+- Add KMP logging library
+- Update to 1.7.20
+- add driver standings
+- add season details when tapping on season
+- add api environment switch
