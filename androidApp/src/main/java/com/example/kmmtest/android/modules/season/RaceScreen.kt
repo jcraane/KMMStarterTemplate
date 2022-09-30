@@ -44,7 +44,7 @@ private fun RaceScreenContent(
     modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = modifier.padding(16.dp).fillMaxWidth(),
+        modifier = modifier.padding(top = 16.dp).fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         output.ToComposable { raceDetails ->
@@ -61,9 +61,7 @@ private fun RaceScreenContent(
             SubTitle(raceDetails.circuitName)
 
             Spacer(Modifier.height(20.dp))
-            LazyColumn(
-                contentPadding = PaddingValues(vertical = 16.dp),
-            ) {
+            LazyColumn {
                 items(raceDetails.schedule) { entry ->
                     ScheduleEntryRow(entry)
                 }
