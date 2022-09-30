@@ -9,10 +9,12 @@ import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.MainScreen
 import com.example.kmmtest.android.ui.MyApplicationTheme
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
     private val seasonViewModel: SeasonViewModel by viewModel()
+    private val driverStandingsViewModel: DriverStandingsViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 Surface {
-                    MainScreen(seasonViewModel)
+                    MainScreen(seasonViewModel, driverStandingsViewModel)
                 }
             }
         }

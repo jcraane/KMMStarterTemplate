@@ -10,8 +10,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.kmmtest.android.modules.season.RaceScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
-import com.example.kmmtest.android.modules.settings.SettingsScreen
+import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import com.example.kmmtest.navigation.BottomTabs
 import com.example.kmmtest.navigation.Routes
 
@@ -19,6 +20,7 @@ import com.example.kmmtest.navigation.Routes
 fun StarterAppNavHost(
     navController: NavHostController,
     seasonViewModel: SeasonViewModel,
+    driverStandingsViewModel: DriverStandingsViewModel,
     modifier: Modifier = Modifier,
 ) {
     NavHost(
@@ -31,7 +33,7 @@ fun StarterAppNavHost(
         }
 
         composable(route = BottomTabs.DRIVER_STANDINGS.route) {
-            SettingsScreen()
+            DriverStandingsScreen(driverStandingsViewModel = driverStandingsViewModel)
         }
 
         composable(

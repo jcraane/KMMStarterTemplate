@@ -1,6 +1,7 @@
 package com.example.kmmtest.android
 
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import com.example.kmmtest.util.formatting.AndroidLocalDateTimeFormatter
 import com.example.kmmtest.util.formatting.LocalDateTimeFormatter
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,5 +14,9 @@ val viewModelsModule = module {
 
     viewModel {
         SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get())
+    }
+
+    viewModel {
+        DriverStandingsViewModel(f1Repository = get())
     }
 }
