@@ -7,11 +7,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
 import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.users.viewmodel.UsersViewModel
 
 @Composable
 fun MainScreen(
-    usersViewModel: UsersViewModel,
     seasonViewModel: SeasonViewModel,
     modifier: Modifier = Modifier,
 ) {
@@ -29,7 +27,7 @@ fun MainScreen(
         }
     ) { paddingValues ->
         StarterAppNavHost(
-            navController = navHostController, usersViewModel = usersViewModel, seasonViewModel = seasonViewModel,
+            navController = navHostController, seasonViewModel = seasonViewModel,
             modifier =
             Modifier.padding(paddingValues)
         )

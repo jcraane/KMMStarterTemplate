@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun Title(text: String, modifier: Modifier = Modifier,) {
     Text(
+        modifier = modifier,
         text = text,
         style = MaterialTheme.typography.h6
     )
@@ -16,6 +17,7 @@ fun Title(text: String, modifier: Modifier = Modifier,) {
 @Composable
 fun SubTitle(text: String, modifier: Modifier = Modifier,) {
     Text(
+        modifier = modifier,
         text = text,
         style = MaterialTheme.typography.body1
     )
@@ -24,6 +26,7 @@ fun SubTitle(text: String, modifier: Modifier = Modifier,) {
 @Composable
 fun Caption(text: String, modifier: Modifier = Modifier,) {
     Text(
+        modifier = modifier,
         text = text,
         style = MaterialTheme.typography.caption
     )

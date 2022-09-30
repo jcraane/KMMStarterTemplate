@@ -35,7 +35,7 @@ fun SeasonScreen(
     val output: DataState<SeasonOutput> by seasonViewModel.seasonsOutput.collectAsStateWithLifecycle(DataState.Empty())
     SeasonScreenContent(
         output,
-        onRaceSelected = { race -> navController.navigate(Routes.Race.getNavigateRoute(race.id))},
+        onRaceSelected = { race -> navController.navigate(Routes.Race.getNavigateRoute(race.id)) },
         modifier,
     )
 }

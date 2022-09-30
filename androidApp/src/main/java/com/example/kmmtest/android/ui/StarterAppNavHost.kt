@@ -14,12 +14,10 @@ import com.example.kmmtest.android.modules.settings.SettingsScreen
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
 import com.example.kmmtest.navigation.BottomTabs
 import com.example.kmmtest.navigation.Routes
-import com.example.kmmtest.users.viewmodel.UsersViewModel
 
 @Composable
 fun StarterAppNavHost(
     navController: NavHostController,
-    usersViewModel: UsersViewModel,
     seasonViewModel: SeasonViewModel,
     modifier: Modifier = Modifier,
 ) {
@@ -42,7 +40,8 @@ fun StarterAppNavHost(
                 navArgument(Routes.Race.ARG_RACE_ID) {
                     NavType.StringType
                 }
-        )) {entry ->
+            )
+        ) { entry ->
             val raceId = entry.arguments?.getString(Routes.Race.ARG_RACE_ID) ?: ""
             RaceScreen(seasonViewModel, navController, raceId)
         }

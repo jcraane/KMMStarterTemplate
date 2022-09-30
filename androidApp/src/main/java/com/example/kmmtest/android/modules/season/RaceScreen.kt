@@ -16,7 +16,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.extensions.drawable
-import com.example.kmmtest.android.ui.theme.Caption
 import com.example.kmmtest.android.ui.theme.SubTitle
 import com.example.kmmtest.android.ui.theme.Title
 import com.example.kmmtest.f1.viewmodel.RaceDetails
@@ -83,5 +82,4 @@ private fun ScheduleEntryRow(entry: RaceDetails.Entry) {
             Divider(modifier = Modifier.padding(top = 8.dp))
         }
     }
-
 }
