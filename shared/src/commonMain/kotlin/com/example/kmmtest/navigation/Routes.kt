@@ -1,10 +1,10 @@
 package com.example.kmmtest.navigation
 
 object Routes {
-    object Profile {
-        private const val basePath = "profile"
-        const val ARG_USER_ID = "userId"
-        const val route = "$basePath/{$ARG_USER_ID}"
-        fun getNavigateRoute(userId: String) = "$basePath/$userId"
+    object Race {
+        private const val basePath = "race"
+        const val ARG_RACE_ID = "raceId"
+        const val route = "$basePath/{$ARG_RACE_ID}"
+        fun getNavigateRoute(raceId: String) = "$basePath/$raceId"
     }
 }

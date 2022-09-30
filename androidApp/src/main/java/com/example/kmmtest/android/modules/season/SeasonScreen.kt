@@ -14,28 +14,36 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavHostController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.ui.theme.Caption
 import com.example.kmmtest.android.ui.theme.SubTitle
 import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.RaceViewModel
+import com.example.kmmtest.f1.viewmodel.RaceOverviewItem
 import com.example.kmmtest.f1.viewmodel.SeasonOutput
 import com.example.kmmtest.f1.viewmodel.SeasonViewModel
+import com.example.kmmtest.navigation.Routes
 import com.example.kmmtest.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun SeasonScreen(
     seasonViewModel: SeasonViewModel,
+    navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
-    val output: DataState<SeasonOutput> by seasonViewModel.season.collectAsStateWithLifecycle(DataState.Empty())
-    SeasonScreenContent(output, modifier)
+    val output: DataState<SeasonOutput> by seasonViewModel.seasonsOutput.collectAsStateWithLifecycle(DataState.Empty())
+    SeasonScreenContent(
+        output,
+        onRaceSelected = { race -> navController.navigate(Routes.Race.getNavigateRoute(race.id))},
+        modifier,
+    )
 }
 
 @Composable
 private fun SeasonScreenContent(
     output: DataState<SeasonOutput>,
+    onRaceSelected: (RaceOverviewItem) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Box(modifier) {
@@ -44,7 +52,7 @@ private fun SeasonScreenContent(
                 contentPadding = PaddingValues(vertical = 16.dp),
             ) {
                 items(season.races) { race ->
-                    RaceRow(race)
+                    RaceRow(race, onRaceSelected)
                 }
             }
         }
@@ -52,14 +60,14 @@ private fun SeasonScreenContent(
 }
 
 @Composable
-private fun RaceRow(race: RaceViewModel) {
+private fun RaceRow(race: RaceOverviewItem, onRaceSelected: (RaceOverviewItem) -> Unit) {
     Row(
         Modifier
             .fillMaxWidth()
             .clickable(
                 remember { MutableInteractionSource() },
                 rememberRipple(bounded = true),
-                onClick = {},
+                onClick = { onRaceSelected(race) },
             )
             .padding(horizontal = 16.dp)
     ) {

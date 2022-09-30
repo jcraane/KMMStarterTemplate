@@ -43,4 +43,12 @@ sealed class DataState<out T> {
         is Error -> Error(exception, message)
         is Loading -> Loading(previousException, null, null)
     }
+
+    companion object {
+        fun <T> fromNullable(value: T?) = if (value != null) {
+            Success(value)
+        } else {
+            Empty()
+        }
+    }
 }
