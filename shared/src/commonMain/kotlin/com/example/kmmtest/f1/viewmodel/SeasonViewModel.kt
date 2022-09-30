@@ -1,5 +1,7 @@
 package com.example.kmmtest.f1.viewmodel
 
+import com.example.kmmtest.*
+import com.example.kmmtest.f1.domain.Schedule
 import com.example.kmmtest.f1.domain.Season
 import com.example.kmmtest.f1.repository.F1Repository
 import com.example.kmmtest.platform.SharedViewModel
@@ -32,14 +34,67 @@ class SeasonViewModel(
 
     private val _selectedRaceId = MutableStateFlow<String?>(null)
     val selectedSeasonOutput = combine(_seasonsForYear, _selectedRaceId) { seasons, raceId ->
-        if (raceId != null && seasons is DataState.Success) {
+        findAndMapSeason(raceId, seasons)
+    }
+
+    private fun findAndMapSeason(raceId: String?, seasons: DataState<Season>): DataState<RaceDetails> {
+        return if (raceId != null && seasons is DataState.Success) {
             val raceDetails = seasons.value.races.find { it.round == raceId }?.let { race ->
-//                todo add schedule
-                RaceDetails("(${race.round}) ${race.name}", race.circuit.name, race.circuit.image)
+                RaceDetails(
+                    "(${race.round}) ${race.name}",
+                    race.circuit.name,
+                    race.circuit.image,
+                    mapSchedule(race.schedule),
+                )
             }
             DataState.fromNullable(raceDetails)
         } else {
             DataState.Empty()
+        }
+    }
+
+    private fun mapSchedule(schedule: Schedule): List<RaceDetails.Entry> {
+        return buildList {
+            add(
+                RaceDetails.Entry(
+                    title = L.race.schedule.firstPractice(),
+                    formattedTime = localDateTimeFormatter.format(schedule.firstPractice, TimeZone.currentSystemDefault())
+                )
+            )
+            add(
+                RaceDetails.Entry(
+                    title = L.race.schedule.secondPractice(),
+                    formattedTime = localDateTimeFormatter.format(schedule.secondPractice, TimeZone.currentSystemDefault())
+                )
+            )
+            schedule.thirdPractice?.let {
+                add(
+                    RaceDetails.Entry(
+                        title = L.race.schedule.thirdPractice(),
+                        formattedTime = localDateTimeFormatter.format(schedule.thirdPractice, TimeZone.currentSystemDefault())
+                    )
+                )
+            }
+            schedule.sprint?.let {
+                add(
+                    RaceDetails.Entry(
+                        title = L.race.schedule.sprint(),
+                        formattedTime = localDateTimeFormatter.format(schedule.sprint, TimeZone.currentSystemDefault())
+                    )
+                )
+            }
+            add(
+                RaceDetails.Entry(
+                    title = L.race.schedule.qualifying(),
+                    formattedTime = localDateTimeFormatter.format(schedule.qualifying, TimeZone.currentSystemDefault())
+                )
+            )
+            add(
+                RaceDetails.Entry(
+                    title = L.race.schedule.race(),
+                    formattedTime = localDateTimeFormatter.format(schedule.race, TimeZone.currentSystemDefault())
+                )
+            )
         }
     }
 

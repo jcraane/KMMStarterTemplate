@@ -11,3 +11,23 @@ bottomTab:
     tabLabel:
       en: Driver Standings
       nl: WK stand
+race:
+  schedule:
+    firstPractice:
+      en: First practice
+      nl: Eerste vrije training
+    secondPractice:
+      en: Second practice
+      nl: Tweede vrije training
+    thirdPractice:
+      en: Third practice
+      nl: Derde vrije training
+    sprint:
+      en: Sprint qualifying
+      nl: Sprint race
+    qualifying:
+      en: Qualifying
+      nl: Kwalificatie
+    race:
+      en: Race
+      nl: Race

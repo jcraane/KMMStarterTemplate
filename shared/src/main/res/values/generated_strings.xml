@@ -3,4 +3,10 @@
 	<string name="l.app.title">Formule 1 inzicht</string>
 	<string name="l.bottomTab.driverStandings.tabLabel">WK stand</string>
 	<string name="l.bottomTab.season.tabLabel">Seizoen</string>
+	<string name="l.race.schedule.firstPractice">Eerste vrije training</string>
+	<string name="l.race.schedule.qualifying">Kwalificatie</string>
+	<string name="l.race.schedule.race">Race</string>
+	<string name="l.race.schedule.secondPractice">Tweede vrije training</string>
+	<string name="l.race.schedule.sprint">Sprint race</string>
+	<string name="l.race.schedule.thirdPractice">Derde vrije training</string>
 </resources>

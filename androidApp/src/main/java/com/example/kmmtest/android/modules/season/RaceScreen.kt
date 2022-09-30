@@ -2,6 +2,9 @@ package com.example.kmmtest.android.modules.season
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -13,6 +16,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.extensions.drawable
+import com.example.kmmtest.android.ui.theme.Caption
 import com.example.kmmtest.android.ui.theme.SubTitle
 import com.example.kmmtest.android.ui.theme.Title
 import com.example.kmmtest.f1.viewmodel.RaceDetails
@@ -52,9 +56,34 @@ private fun RaceScreenContent(
                 painter = rememberDrawablePainter(raceDetails.circuit.drawable(LocalContext.current)),
                 contentDescription = null,
             )
-            Spacer(Modifier.height(20.dp))
 
+            Spacer(Modifier.height(20.dp))
             SubTitle(raceDetails.circuitName)
+
+            Spacer(Modifier.height(20.dp))
+            LazyColumn(
+                contentPadding = PaddingValues(vertical = 16.dp),
+            ) {
+                items(raceDetails.schedule) { entry ->
+                    ScheduleEntryRow(entry)
+                }
+            }
         }
     }
+}
+
+@Composable
+private fun ScheduleEntryRow(entry: RaceDetails.Entry) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+    ) {
+        Column(modifier = Modifier.padding(top = 4.dp)) {
+            Title(text = entry.title)
+            SubTitle(text = entry.formattedTime)
+            Divider(modifier = Modifier.padding(top = 8.dp))
+        }
+    }
+
 }

@@ -3,4 +3,10 @@
 	<string name="l.app.title">F1 insights</string>
 	<string name="l.bottomTab.driverStandings.tabLabel">Driver Standings</string>
 	<string name="l.bottomTab.season.tabLabel">Season</string>
+	<string name="l.race.schedule.firstPractice">First practice</string>
+	<string name="l.race.schedule.qualifying">Qualifying</string>
+	<string name="l.race.schedule.race">Race</string>
+	<string name="l.race.schedule.secondPractice">Second practice</string>
+	<string name="l.race.schedule.sprint">Sprint qualifying</string>
+	<string name="l.race.schedule.thirdPractice">Third practice</string>
 </resources>

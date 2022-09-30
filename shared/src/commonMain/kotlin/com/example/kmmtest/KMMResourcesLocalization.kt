@@ -5,6 +5,7 @@ class L {
   companion object {
     val app: App = App()
     val bottomTab: BottomTab = BottomTab()
+    val race: Race = Race()
   }
   class App {
     operator fun get(key: String): String? = when(key) {
@@ -28,9 +29,29 @@ class L {
       }
     }
   }
+  data class Race(
+    val schedule: Schedule = Schedule()) {
+    class Schedule {
+      operator fun get(key: String): String? = when(key) {
+        "firstPractice" -> firstPractice()
+        "secondPractice" -> secondPractice()
+        "thirdPractice" -> thirdPractice()
+        "sprint" -> sprint()
+        "qualifying" -> qualifying()
+        "race" -> race()
+        else -> null
+      }
+    }
+  }
 }
 
 
 expect fun L.App.title(): String
 expect fun L.BottomTab.DriverStandings.tabLabel(): String
 expect fun L.BottomTab.Season.tabLabel(): String
+expect fun L.Race.Schedule.firstPractice(): String
+expect fun L.Race.Schedule.qualifying(): String
+expect fun L.Race.Schedule.race(): String
+expect fun L.Race.Schedule.secondPractice(): String
+expect fun L.Race.Schedule.sprint(): String
+expect fun L.Race.Schedule.thirdPractice(): String
