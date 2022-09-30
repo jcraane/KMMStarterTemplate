@@ -40,7 +40,7 @@ class SeasonViewModel(
             RaceOverviewItem(
                 id = race.round,
                 title = "(${race.round}) ${race.name}",
-                subTitle = localDateTimeFormatter.format(race.schedule.race, TimeZone.currentSystemDefault()),
+                subTitle = localDateTimeFormatter.format(race.schedule.race, TimeZone.of(race.schedule.timeZone), TimeZone.currentSystemDefault()),
                 caption = race.circuit.name,
             )
         }

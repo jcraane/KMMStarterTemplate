@@ -29,24 +29,25 @@ private fun mapRace(race: Race, formatter: LocalDateTimeFormatter): RaceDetails 
 )
 
 private fun mapSchedule(schedule: Schedule, formatter: LocalDateTimeFormatter): List<RaceDetails.Entry> {
+    val timeZone = TimeZone.of(schedule.timeZone)
     return buildList {
         add(
             RaceDetails.Entry(
                 title = L.race.schedule.firstPractice(),
-                formattedTime = formatter.format(schedule.firstPractice, TimeZone.currentSystemDefault())
+                formattedTime = formatter.format(schedule.firstPractice, timeZone, TimeZone.currentSystemDefault())
             )
         )
         add(
             RaceDetails.Entry(
                 title = L.race.schedule.secondPractice(),
-                formattedTime = formatter.format(schedule.secondPractice, TimeZone.currentSystemDefault())
+                formattedTime = formatter.format(schedule.secondPractice, timeZone, TimeZone.currentSystemDefault())
             )
         )
         schedule.thirdPractice?.let {
             add(
                 RaceDetails.Entry(
                     title = L.race.schedule.thirdPractice(),
-                    formattedTime = formatter.format(schedule.thirdPractice, TimeZone.currentSystemDefault())
+                    formattedTime = formatter.format(schedule.thirdPractice, timeZone, TimeZone.currentSystemDefault())
                 )
             )
         }
@@ -54,20 +55,20 @@ private fun mapSchedule(schedule: Schedule, formatter: LocalDateTimeFormatter): 
             add(
                 RaceDetails.Entry(
                     title = L.race.schedule.sprint(),
-                    formattedTime = formatter.format(schedule.sprint, TimeZone.currentSystemDefault())
+                    formattedTime = formatter.format(schedule.sprint, timeZone, TimeZone.currentSystemDefault())
                 )
             )
         }
         add(
             RaceDetails.Entry(
                 title = L.race.schedule.qualifying(),
-                formattedTime = formatter.format(schedule.qualifying, TimeZone.currentSystemDefault())
+                formattedTime = formatter.format(schedule.qualifying, timeZone, TimeZone.currentSystemDefault())
             )
         )
         add(
             RaceDetails.Entry(
                 title = L.race.schedule.race(),
-                formattedTime = formatter.format(schedule.race, TimeZone.currentSystemDefault())
+                formattedTime = formatter.format(schedule.race, timeZone, TimeZone.currentSystemDefault())
             )
         )
     }
