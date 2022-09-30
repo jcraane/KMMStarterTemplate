@@ -24,4 +24,5 @@ class UserRepository(private val userApi: UserApi) {
             emit(DataState.Error(it, "Error retrieving users"))
         }
     }
+
 }

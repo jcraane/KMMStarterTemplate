@@ -1,4 +1,4 @@
-import com.example.kmmtest.f1.api.response.SeasonResponse
+import com.example.kmmtest.f1.api.response.season.SeasonResponse
 import com.example.kmmtest.f1.repository.SeasonResponseMapper
 import kotlin.test.Test
 import kotlin.test.assertEquals

@@ -1,9 +1,9 @@
 package com.example.kmmtest.f1.repository
 
 import com.example.kmmtest.f1.domain.*
-import com.example.kmmtest.f1.api.response.CircuitResponse
-import com.example.kmmtest.f1.api.response.RaceResponse
-import com.example.kmmtest.f1.api.response.SeasonResponse
+import com.example.kmmtest.f1.api.response.season.CircuitResponse
+import com.example.kmmtest.f1.api.response.season.RaceResponse
+import com.example.kmmtest.f1.api.response.season.SeasonResponse
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
