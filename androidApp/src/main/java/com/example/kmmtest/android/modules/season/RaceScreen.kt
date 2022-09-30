@@ -31,7 +31,7 @@ fun RaceScreen(
     raceId: String,
     modifier: Modifier = Modifier,
 ) {
-    val output by seasonViewModel.selectedSeasonOutput.collectAsStateWithLifecycle(DataState.Empty())
+    val output by seasonViewModel.selectedRaceOutput.collectAsStateWithLifecycle(DataState.Empty())
     seasonViewModel.selectRace(raceId)
 
     RaceScreenContent(output, modifier)

@@ -31,7 +31,7 @@ class SeasonViewModel(
         }
 
     private val _selectedRaceId = MutableStateFlow<String?>(null)
-    val selectedSeasonOutput = combine(_seasonsForYear, _selectedRaceId) { seasons, raceId ->
+    val selectedRaceOutput = combine(_seasonsForYear, _selectedRaceId) { seasons, raceId ->
         findAndMapRace(raceId, seasons, localDateTimeFormatter)
     }
 
