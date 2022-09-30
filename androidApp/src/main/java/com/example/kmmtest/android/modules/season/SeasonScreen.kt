@@ -19,9 +19,9 @@ import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.ui.theme.Caption
 import com.example.kmmtest.android.ui.theme.SubTitle
 import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.RaceOverviewItem
-import com.example.kmmtest.f1.viewmodel.SeasonOutput
-import com.example.kmmtest.f1.viewmodel.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.season.RaceOverviewItem
+import com.example.kmmtest.f1.viewmodel.season.SeasonOutput
+import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.navigation.Routes
 import com.example.kmmtest.util.DataState
 

@@ -1,4 +1,4 @@
-package com.example.kmmtest.f1.viewmodel
+package com.example.kmmtest.f1.viewmodel.season
 
 import com.example.kmmtest.Image
 

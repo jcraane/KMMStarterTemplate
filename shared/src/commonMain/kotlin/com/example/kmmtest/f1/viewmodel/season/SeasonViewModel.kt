@@ -1,8 +1,8 @@
-package com.example.kmmtest.f1.viewmodel
+package com.example.kmmtest.f1.viewmodel.season
 
 import com.example.kmmtest.f1.domain.Season
 import com.example.kmmtest.f1.repository.F1Repository
-import com.example.kmmtest.f1.viewmodel.mapper.findAndMapRace
+import com.example.kmmtest.f1.viewmodel.season.mapper.findAndMapRace
 import com.example.kmmtest.platform.SharedViewModel
 import com.example.kmmtest.util.formatting.LocalDateTimeFormatter
 import kotlinx.coroutines.flow.MutableStateFlow

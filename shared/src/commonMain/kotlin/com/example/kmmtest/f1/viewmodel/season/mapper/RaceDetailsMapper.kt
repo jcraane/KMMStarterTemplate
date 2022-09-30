@@ -1,10 +1,10 @@
-package com.example.kmmtest.f1.viewmodel.mapper
+package com.example.kmmtest.f1.viewmodel.season.mapper
 
 import com.example.kmmtest.*
 import com.example.kmmtest.f1.domain.Race
 import com.example.kmmtest.f1.domain.Schedule
 import com.example.kmmtest.f1.domain.Season
-import com.example.kmmtest.f1.viewmodel.RaceDetails
+import com.example.kmmtest.f1.viewmodel.season.RaceDetails
 import com.example.kmmtest.util.DataState
 import com.example.kmmtest.util.formatting.LocalDateTimeFormatter
 import kotlinx.datetime.TimeZone

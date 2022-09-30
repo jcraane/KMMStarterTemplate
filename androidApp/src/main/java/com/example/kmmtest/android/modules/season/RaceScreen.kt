@@ -18,8 +18,8 @@ import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.theme.SubTitle
 import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.RaceDetails
-import com.example.kmmtest.f1.viewmodel.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.season.RaceDetails
+import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.util.DataState
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 

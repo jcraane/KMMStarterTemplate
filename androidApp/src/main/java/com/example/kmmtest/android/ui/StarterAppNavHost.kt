@@ -11,7 +11,7 @@ import androidx.navigation.navArgument
 import com.example.kmmtest.android.modules.season.RaceScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.settings.SettingsScreen
-import com.example.kmmtest.f1.viewmodel.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.navigation.BottomTabs
 import com.example.kmmtest.navigation.Routes
 

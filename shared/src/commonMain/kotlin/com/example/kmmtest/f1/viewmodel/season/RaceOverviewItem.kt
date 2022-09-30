@@ -1,4 +1,4 @@
-package com.example.kmmtest.f1.viewmodel
+package com.example.kmmtest.f1.viewmodel.season
 
 data class RaceOverviewItem(
     val id: String,

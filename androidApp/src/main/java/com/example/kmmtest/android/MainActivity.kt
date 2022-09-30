@@ -8,7 +8,7 @@ import com.example.kmmtest.Images
 import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.MainScreen
 import com.example.kmmtest.android.ui.MyApplicationTheme
-import com.example.kmmtest.f1.viewmodel.SeasonViewModel
+import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
