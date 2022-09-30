@@ -28,8 +28,7 @@ fun MainScreen(
     ) { paddingValues ->
         StarterAppNavHost(
             navController = navHostController, seasonViewModel = seasonViewModel,
-            modifier =
-            Modifier.padding(paddingValues)
+            modifier = Modifier.padding(paddingValues),
         )
     }
 }
