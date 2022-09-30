@@ -10,7 +10,6 @@ object Images {
 	val CIRCUIT_ABUDHABI: Image = Image("circuit_abudhabi")
 	val CIRCUIT_SUZUKA: Image = Image("circuit_suzuka")
 	val CIRCUIT_BAHRAIN: Image = Image("circuit_bahrain")
-	val PNG_ICON: Image = Image("png_icon")
 	val CIRCUIT_CATALUNYA: Image = Image("circuit_catalunya")
 	val IC_SETTINGS: Image = Image("ic_settings")
 	val CIRCUIT_SILVERSTONE: Image = Image("circuit_silverstone")
