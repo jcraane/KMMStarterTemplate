@@ -28,9 +28,7 @@ abstract class AbstractLocalDateTimeFormatter : LocalDateTimeFormatter {
         sourceTimeZone: TimeZone,
         targetTimeZone: TimeZone,
         type: LocalDateTimeFormatter.Type
-    ): String {
-        return doFormat(date.toInstant(sourceTimeZone, targetTimeZone))
-    }
+    ): String = doFormat(date.toInstant(sourceTimeZone, targetTimeZone))
 
     abstract fun doFormat(instant: Instant): String
 }
