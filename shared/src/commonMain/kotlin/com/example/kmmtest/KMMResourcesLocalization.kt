@@ -5,6 +5,7 @@ class L {
   companion object {
     val app: App = App()
     val bottomTab: BottomTab = BottomTab()
+    val driverStandings: DriverStandings = DriverStandings()
     val race: Race = Race()
   }
   class App {
@@ -29,6 +30,8 @@ class L {
       }
     }
   }
+  class DriverStandings {
+  }
   data class Race(
     val schedule: Schedule = Schedule()) {
     class Schedule {
@@ -49,6 +52,7 @@ class L {
 expect fun L.App.title(): String
 expect fun L.BottomTab.DriverStandings.tabLabel(): String
 expect fun L.BottomTab.Season.tabLabel(): String
+expect fun L.DriverStandings.points(value0: String): String
 expect fun L.Race.Schedule.firstPractice(): String
 expect fun L.Race.Schedule.qualifying(): String
 expect fun L.Race.Schedule.race(): String

@@ -3,6 +3,7 @@
 	<string name="l.app.title">F1 insights</string>
 	<string name="l.bottomTab.driverStandings.tabLabel">Driver Standings</string>
 	<string name="l.bottomTab.season.tabLabel">Season</string>
+	<string name="l.driverStandings.points">%1$s points</string>
 	<string name="l.race.schedule.firstPractice">First practice</string>
 	<string name="l.race.schedule.qualifying">Qualifying</string>
 	<string name="l.race.schedule.race">Race</string>

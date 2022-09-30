@@ -1,8 +1,10 @@
 package com.example.kmmtest.f1.viewmodel.standings
 
+import com.example.kmmtest.L
 import com.example.kmmtest.f1.domain.DriverStandings
 import com.example.kmmtest.f1.repository.F1Repository
 import com.example.kmmtest.platform.SharedViewModel
+import com.example.kmmtest.points
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.map
@@ -30,9 +32,9 @@ class DriverStandingsViewModel(f1Repository: F1Repository) : SharedViewModel() {
             DriverStandingsOutput.Driver(
                 fullName = "${entry.position} ${entry.driver.givenName} ${entry.driver.familyName}",
                 number = entry.driver.permanentNumber,
-                points = entry.points.toString(),
+                points = L.driverStandings.points(entry.points.toString()),
                 constructorName = entry.constructor.name,
-                )
+            )
         })
     }
 }

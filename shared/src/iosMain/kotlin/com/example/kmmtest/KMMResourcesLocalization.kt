@@ -19,6 +19,10 @@ actual fun L.BottomTab.Season.tabLabel(): String {
     val localizedString = localizationBundle.localizedStringForKey("l.bottomTab.season.tabLabel", null, null)
     return NSString.localizedStringWithFormat(localizedString)
 }
+actual fun L.DriverStandings.points(value0: String): String {
+    val localizedString = localizationBundle.localizedStringForKey("l.driverStandings.points", null, null)
+    return NSString.localizedStringWithFormat(localizedString, value0 as NSString)
+}
 actual fun L.Race.Schedule.firstPractice(): String {
     val localizedString = localizationBundle.localizedStringForKey("l.race.schedule.firstPractice", null, null)
     return NSString.localizedStringWithFormat(localizedString)

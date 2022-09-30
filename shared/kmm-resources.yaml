@@ -31,3 +31,7 @@ race:
     race:
       en: Race
       nl: Race
+driverStandings:
+  points:
+    en: "%1$s points"
+    nl: "%1$s punten"

@@ -9,6 +9,7 @@ internal fun localizations_en(): Map<String, String> {
 	localizations["l.app.title"] = "F1 insights"
 	localizations["l.bottomTab.driverStandings.tabLabel"] = "Driver Standings"
 	localizations["l.bottomTab.season.tabLabel"] = "Season"
+	localizations["l.driverStandings.points"] = "%1$@ points"
 	localizations["l.race.schedule.firstPractice"] = "First practice"
 	localizations["l.race.schedule.qualifying"] = "Qualifying"
 	localizations["l.race.schedule.race"] = "Race"
