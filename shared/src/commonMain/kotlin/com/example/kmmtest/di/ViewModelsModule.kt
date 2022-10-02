@@ -16,6 +16,6 @@ fun viewModelModule() = module {
     }
 
     single {
-        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get())
+        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get(), navigator = get())
     }
 }

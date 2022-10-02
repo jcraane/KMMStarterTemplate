@@ -3,6 +3,7 @@ package com.example.kmmtest.di
 import com.example.kmmtest.f1.api.F1Api
 import com.example.kmmtest.f1.api.F1ApiKtor
 import com.example.kmmtest.f1.repository.F1Repository
+import com.example.kmmtest.navigation.ScreenNavigator
 import com.example.kmmtest.users.api.UserApi
 import com.example.kmmtest.users.api.UserApiKtor
 import com.example.kmmtest.users.repository.UserRepository
@@ -22,10 +23,11 @@ fun commonModule(httpLoggingSpec: HttpLoggingSpec) = module {
         createHttpClient(httpLoggingSpec, json = get())
     }
 
+    single { ScreenNavigator() }
     single<UserApi> { UserApiKtor(httpClient = get()) }
     single<F1Api> { F1ApiKtor(httpClient = get()) }
     single { UserRepository(userApi = get()) }
-    single { F1Repository(f1Api = get())}
+    single { F1Repository(f1Api = get()) }
 }
 
 private fun createHttpClient(httpLoggingSpec: HttpLoggingSpec, json: Json) = HttpClient() {

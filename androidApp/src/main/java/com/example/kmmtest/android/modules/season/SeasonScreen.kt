@@ -22,7 +22,6 @@ import com.example.kmmtest.android.ui.theme.Title
 import com.example.kmmtest.f1.viewmodel.season.RaceOverviewItem
 import com.example.kmmtest.f1.viewmodel.season.SeasonOutput
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.navigation.Routes
 import com.example.kmmtest.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
@@ -35,7 +34,7 @@ fun SeasonScreen(
     val output: DataState<SeasonOutput> by seasonViewModel.seasonsOutput.collectAsStateWithLifecycle(DataState.Empty())
     SeasonScreenContent(
         output,
-        onRaceSelected = { race -> navController.navigate(Routes.Race.getNavigateRoute(race.id)) },
+        onRaceSelected = { race -> seasonViewModel.onRaceSelectedClicked(race.id) },
         modifier,
     )
 }

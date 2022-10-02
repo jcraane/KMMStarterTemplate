@@ -4,17 +4,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
+import com.example.kmmtest.android.extensions.navArguments
 import com.example.kmmtest.android.modules.season.RaceScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.navigation.Routes
+import com.example.kmmtest.navigation.RaceDetailsEvent
 
 @Composable
 fun StarterAppNavHost(
@@ -36,15 +35,13 @@ fun StarterAppNavHost(
             DriverStandingsScreen(driverStandingsViewModel = driverStandingsViewModel)
         }
 
+//        todo Decouple event specification from resolved event so we do not need to write RaceDetailsEvent("") to obtain route
+// and argument names.
         composable(
-            route = Routes.Race.route,
-            arguments = listOf(
-                navArgument(Routes.Race.ARG_RACE_ID) {
-                    NavType.StringType
-                }
-            )
+            route = RaceDetailsEvent("").route,
+            arguments = RaceDetailsEvent("").navArguments,
         ) { entry ->
-            val raceId = entry.arguments?.getString(Routes.Race.ARG_RACE_ID) ?: ""
+            val raceId = entry.arguments?.getString(RaceDetailsEvent("").arguments.first().name) ?: ""
             RaceScreen(seasonViewModel, navController, raceId)
         }
     }

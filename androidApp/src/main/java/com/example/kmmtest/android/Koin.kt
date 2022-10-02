@@ -13,7 +13,7 @@ val viewModelsModule = module {
     }
 
     viewModel {
-        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get())
+        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get(), navigator = get())
     }
 
     viewModel {
