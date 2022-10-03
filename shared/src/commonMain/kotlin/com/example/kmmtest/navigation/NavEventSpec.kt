@@ -27,3 +27,19 @@ class RaceDetailsEventSpec() : NavEventSpec("race", setOf(NavArgument("raceId", 
 object NavigationEvents {
     val raceDetails = RaceDetailsEventSpec()
 }
+
+
+/**
+
+@Route("race")
+class RaceDetailsNavEvent {
+@NavArgument(name = "raceId", type = NavType.String)
+val raceId: String
+}
+
+ generates so you can do this:
+
+ RaceDetailsNavEvent.route() (will output race/{raceId}
+ RaceDetailsNavEvent.raceIdArgName (will output raceId)
+ RaceDetailsNavEvent.create(raceId) will create RaceDetailsNavEvent with resolved raceId.
+ */
