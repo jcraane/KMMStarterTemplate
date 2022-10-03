@@ -40,7 +40,7 @@ fun StarterAppNavHost(
             arguments = NavigationEvents.raceDetails.navArguments,
         ) { entry ->
             val raceId = entry.arguments?.getString(NavigationEvents.raceDetails.argRaceId) ?: ""
-            RaceScreen(seasonViewModel, navController, raceId)
+            RaceScreen(seasonViewModel, raceId)
         }
     }
 }

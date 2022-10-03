@@ -27,7 +27,6 @@ import com.google.accompanist.drawablepainter.rememberDrawablePainter
 @Composable
 fun RaceScreen(
     seasonViewModel: SeasonViewModel,
-    navController: NavHostController,
     raceId: String,
     modifier: Modifier = Modifier,
 ) {
