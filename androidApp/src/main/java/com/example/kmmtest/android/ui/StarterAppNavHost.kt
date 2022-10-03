@@ -13,7 +13,7 @@ import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.navigation.RaceDetailsEvent
+import com.example.kmmtest.navigation.NavigationEvents
 
 @Composable
 fun StarterAppNavHost(
@@ -35,13 +35,11 @@ fun StarterAppNavHost(
             DriverStandingsScreen(driverStandingsViewModel = driverStandingsViewModel)
         }
 
-//        todo Decouple event specification from resolved event so we do not need to write RaceDetailsEvent("") to obtain route
-// and argument names.
         composable(
-            route = RaceDetailsEvent("").route,
-            arguments = RaceDetailsEvent("").navArguments,
+            route = NavigationEvents.raceDetails.route,
+            arguments = NavigationEvents.raceDetails.navArguments,
         ) { entry ->
-            val raceId = entry.arguments?.getString(RaceDetailsEvent("").arguments.first().name) ?: ""
+            val raceId = entry.arguments?.getString(NavigationEvents.raceDetails.argRaceId) ?: ""
             RaceScreen(seasonViewModel, navController, raceId)
         }
     }

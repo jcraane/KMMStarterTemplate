@@ -1,20 +1,7 @@
 package com.example.kmmtest.navigation
 
-sealed class NavigationEvent(
-    val screen: String,
-    val arguments: List<Argument> = emptyList(),
-) {
-    enum class ArgType {
-        STRING;
-    }
+sealed class NavigationEvent(val route: String) {
+    class RaceDetailsEvent(route: String) : NavigationEvent(route)
 
-    data class Argument(val name: String, val type: ArgType)
-
-    val route = "$screen/${arguments.joinToString("/") { "{${it.name}"} }}"
+    object None : NavigationEvent("")
 }
-
-class RaceDetailsEvent(private val raceId: String) : NavigationEvent("race", listOf(Argument("raceId", ArgType.STRING))) {
-    fun getPath() = "$screen/$raceId"
-}
-
-object None : NavigationEvent("")
