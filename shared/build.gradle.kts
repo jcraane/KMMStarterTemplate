@@ -40,7 +40,7 @@ kotlin {
                 implementation(Dependencies.JetBrains.kotlinSerialization)
                 implementation(Dependencies.JetBrains.kotlinDateTime)
                 implementation(Dependencies.Koin.core)
-                implementation("dev.jamiecraane:annotations:0.1-SNAPSHOT")
+                implementation(Dependencies.KmmNavigation.annotations)
             }
         }
         val commonTest by getting {
@@ -88,7 +88,7 @@ android {
 dependencies {
     implementation(Dependencies.Compose.lifecycleViewModel)
     implementation(Dependencies.Compose.lifecycleViewModelKtx)
-    add("kspCommonMainMetadata", "dev.jamiecraane:nav-processor:0.1-SNAPSHOT")
+    add("kspCommonMainMetadata", Dependencies.KmmNavigation.annotationProcessor)
 }
 
 kmmResourcesConfig {

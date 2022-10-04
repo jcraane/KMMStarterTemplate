@@ -28,7 +28,8 @@ object Versions {
     const val kmmImages = "1.0.0-alpha11"
     const val accompanist = "0.25.1"
     const val detekt = "1.21.0"
-    const val detektTwitterCompose = "0.0.16"
+    const val detektTwitterCompose = "0.0.18"
+    const val kmmNavigation = "0.1-SNAPSHOT"
 }
 
 object Dependencies {
@@ -75,5 +76,10 @@ object Dependencies {
     object Detekt {
         const val ktLint = "io.gitlab.arturbosch.detekt:detekt-formatting:${Versions.detekt}"
         const val twitterCompose = "com.twitter.compose.rules:detekt:${Versions.detektTwitterCompose}"
+    }
+
+    object KmmNavigation {
+        const val annotations = "dev.jamiecraane:annotations:${Versions.kmmNavigation}"
+        const val annotationProcessor = "dev.jamiecraane:nav-processor:${Versions.kmmNavigation}"
     }
 }
