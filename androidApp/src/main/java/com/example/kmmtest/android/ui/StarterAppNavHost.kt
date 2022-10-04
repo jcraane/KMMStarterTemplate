@@ -8,6 +8,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.kmmtest.android.extensions.toNavArguments
 import com.example.kmmtest.android.modules.season.RaceScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
@@ -38,11 +39,7 @@ fun StarterAppNavHost(
 
         composable(
             route = RaceDetailsNavEvent.route,
-            arguments = listOf(
-                navArgument(RaceDetailsNavEvent.raceId) {
-                    NavType.StringType
-                }
-            ),
+            arguments = RaceDetailsNavEvent.arguments.toNavArguments,
         ) { entry ->
             val raceId = entry.arguments?.getString(RaceDetailsNavEvent.raceId) ?: ""
             RaceScreen(seasonViewModel, raceId)

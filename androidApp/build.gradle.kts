@@ -46,6 +46,7 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+    implementation("dev.jamiecraane:annotations:0.1-SNAPSHOT")
     implementation(Dependencies.Compose.composeUI)
     implementation(Dependencies.Compose.composeUITooling)
     implementation(Dependencies.Compose.composeUIToolingPreview)
