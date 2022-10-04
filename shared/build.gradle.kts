@@ -7,6 +7,7 @@ plugins {
     id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
     id(Plugins.kmmResource) version (Versions.kmmResources)
     id(Plugins.kmmImages) version (Versions.kmmImages)
+    id("com.google.devtools.ksp")
 }
 
 kotlin {
@@ -28,6 +29,8 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
+
             dependencies {
                 implementation(Dependencies.JetBrains.Ktor.clientCore)
                 implementation(Dependencies.JetBrains.Ktor.clientCio)
@@ -37,6 +40,7 @@ kotlin {
                 implementation(Dependencies.JetBrains.kotlinSerialization)
                 implementation(Dependencies.JetBrains.kotlinDateTime)
                 implementation(Dependencies.Koin.core)
+                implementation("dev.jamiecraane:annotations:0.1-SNAPSHOT")
             }
         }
         val commonTest by getting {
@@ -84,6 +88,7 @@ android {
 dependencies {
     implementation(Dependencies.Compose.lifecycleViewModel)
     implementation(Dependencies.Compose.lifecycleViewModelKtx)
+    add("kspCommonMainMetadata", "dev.jamiecraane:nav-processor:0.1-SNAPSHOT")
 }
 
 kmmResourcesConfig {
@@ -119,11 +124,11 @@ tasks["preBuild"].dependsOn(generateImages)
 tasks {
     */
 /**
-     * This sets up dependencies between the plutil task and compileKotlinIos* tasks. This
-     * way common is recompiled if something in generic.yaml changes (so new ios resources
-     * are generated). If the generic.yaml file is not changed, the resources are considered
-     * up to date by Gradle.
-     *//*
+ * This sets up dependencies between the plutil task and compileKotlinIos* tasks. This
+ * way common is recompiled if something in generic.yaml changes (so new ios resources
+ * are generated). If the generic.yaml file is not changed, the resources are considered
+ * up to date by Gradle.
+ *//*
 
     listOf(
         "compileKotlinIosArm64",

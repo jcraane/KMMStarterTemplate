@@ -3,8 +3,7 @@ package com.example.kmmtest.f1.viewmodel.season
 import com.example.kmmtest.f1.domain.Season
 import com.example.kmmtest.f1.repository.F1Repository
 import com.example.kmmtest.f1.viewmodel.season.mapper.findAndMapRace
-import com.example.kmmtest.navigation.NavigationEvent
-import com.example.kmmtest.navigation.NavigationEvents
+import com.example.kmmtest.navigation.RaceDetailsNavEvent
 import com.example.kmmtest.navigation.ScreenNavigator
 import com.example.kmmtest.platform.SharedViewModel
 import com.example.kmmtest.platform.scope
@@ -62,7 +61,7 @@ class SeasonViewModel(
 
     fun onRaceSelectedClicked(raceId: String) {
         scope.launch {
-            navigator.navigate(NavigationEvent.RaceDetailsEvent(NavigationEvents.raceDetails.getRoute(raceId)))
+            navigator.navigate(RaceDetailsNavEvent(raceId))
         }
     }
 }

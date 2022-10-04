@@ -23,14 +23,12 @@ fun MainScreen(
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     val navHostController = rememberNavController()
 
-    val event: NavigationEvent by navigator.navigationEvents.collectAsStateWithLifecycle(NavigationEvent.None)
+    val event: BaseNavigationEvent? by navigator.navigationEvents.collectAsStateWithLifecycle(null)
 
     event.let {
         when (it) {
-            NavigationEvent.None -> {/* Do nothing*/
-            }
-
-            is NavigationEvent.RaceDetailsEvent -> navHostController.navigate(it.route)
+            is RaceDetailsNavEvent -> navHostController.navigate(it.route())
+            null -> { /*Do nothing*/ }
         }
     }
 

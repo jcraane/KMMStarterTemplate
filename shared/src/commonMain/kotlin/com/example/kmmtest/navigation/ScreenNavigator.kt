@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.receiveAsFlow
  * to trigger navigation by calling the navigate method.
  */
 class ScreenNavigator {
-    private val eventChannel = Channel<NavigationEvent>()
+    private val eventChannel = Channel<BaseNavigationEvent>()
 
     val navigationEvents = eventChannel.receiveAsFlow()
 
-    suspend fun navigate(event: NavigationEvent) {
+    suspend fun navigate(event: BaseNavigationEvent) {
         eventChannel.send(event)
     }
 }

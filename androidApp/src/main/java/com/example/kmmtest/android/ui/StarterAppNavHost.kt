@@ -4,16 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.kmmtest.android.extensions.navArguments
+import androidx.navigation.navArgument
 import com.example.kmmtest.android.modules.season.RaceScreen
 import com.example.kmmtest.android.modules.season.SeasonScreen
 import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
 import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
 import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
 import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.navigation.NavigationEvents
+import com.example.kmmtest.navigation.RaceDetailsNavEvent
 
 @Composable
 fun StarterAppNavHost(
@@ -36,10 +37,14 @@ fun StarterAppNavHost(
         }
 
         composable(
-            route = NavigationEvents.raceDetails.route,
-            arguments = NavigationEvents.raceDetails.navArguments,
+            route = RaceDetailsNavEvent.route,
+            arguments = listOf(
+                navArgument(RaceDetailsNavEvent.raceId) {
+                    NavType.StringType
+                }
+            ),
         ) { entry ->
-            val raceId = entry.arguments?.getString(NavigationEvents.raceDetails.argRaceId) ?: ""
+            val raceId = entry.arguments?.getString(RaceDetailsNavEvent.raceId) ?: ""
             RaceScreen(seasonViewModel, raceId)
         }
     }
