@@ -13,7 +13,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavHostController
 import com.example.kmmtest.android.extensions.ToComposable
 import com.example.kmmtest.android.extensions.drawable
 import com.example.kmmtest.android.ui.theme.SubTitle

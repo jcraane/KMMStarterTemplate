@@ -1,6 +1,5 @@
 package com.example.kmmtest.android.extensions
 
-import android.icu.text.MessagePattern
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
