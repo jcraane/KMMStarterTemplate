@@ -7,7 +7,7 @@ plugins {
     id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
     id(Plugins.kmmResource) version (Versions.kmmResources)
     id(Plugins.kmmImages) version (Versions.kmmImages)
-    id("com.google.devtools.ksp")
+    id(Plugins.ksp)
 }
 
 kotlin {

@@ -10,6 +10,7 @@ object Plugins {
     const val kmmResource = "dev.jamiecraane.plugins.kmmresources"
     const val kmmImages = "dev.jamiecraane.plugins.kmmimages"
     const val detekt = "io.gitlab.arturbosch.detekt"
+    const val ksp = "com.google.devtools.ksp"
 }
 
 object Versions {
