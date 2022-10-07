@@ -23,6 +23,7 @@ fun MainScreen(
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     val navHostController = rememberNavController()
 
+//    todo test this with a configuration change to see if events are still being processed.
     val event: BaseNavigationEvent? by navigator.navigationEvents.collectAsStateWithLifecycle(null)
 
     event.let {
