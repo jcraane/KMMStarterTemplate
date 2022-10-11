@@ -7,6 +7,12 @@ plugins {
     kotlin("plugin.serialization") version "1.7.20"
 }
 
+buildscript {
+    dependencies {
+        classpath(Dependencies.SqlDelight.sqlDelightGradlePlugin)
+    }
+}
+
 allprojects {
     repositories {
         google()

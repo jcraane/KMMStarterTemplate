@@ -11,6 +11,7 @@ object Plugins {
     const val kmmImages = "dev.jamiecraane.plugins.kmmimages"
     const val detekt = "io.gitlab.arturbosch.detekt"
     const val ksp = "com.google.devtools.ksp"
+    const val sqlDelight = "com.squareup.sqldelight"
 }
 
 object Versions {
@@ -32,6 +33,7 @@ object Versions {
     const val detekt = "1.21.0"
     const val detektTwitterCompose = "0.0.18"
     const val kmmNavigation = "0.1-SNAPSHOT"
+    const val sqlDelight = "1.5.4"
 }
 
 object Dependencies {
@@ -83,5 +85,10 @@ object Dependencies {
     object KmmNavigation {
         const val annotations = "dev.jamiecraane:annotations:${Versions.kmmNavigation}"
         const val annotationProcessor = "dev.jamiecraane:nav-processor:${Versions.kmmNavigation}"
+    }
+
+    object SqlDelight {
+        const val sqlDelightGradlePlugin = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
+        const val sqlDelightCoroutineExtensions = "com.squareup.sqldelight:coroutines-extensions:${Versions.sqlDelight}"
     }
 }

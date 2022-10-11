@@ -8,6 +8,7 @@ plugins {
     id(Plugins.kmmResource) version (Versions.kmmResources)
     id(Plugins.kmmImages) version (Versions.kmmImages)
     id(Plugins.ksp)
+    id(Plugins.sqlDelight)
 }
 
 kotlin {
@@ -119,6 +120,12 @@ kmmImagesConfig {
 
 val generateImages = tasks["generateImages"]
 tasks["preBuild"].dependsOn(generateImages)
+
+/*sqldelight {
+    database("Database") {
+        packageName = "com.exampp"
+    }
+}*/
 
 /*
 tasks {
