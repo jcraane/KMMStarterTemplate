@@ -1,6 +1,6 @@
 pluginManagement {
     plugins {
-        id("com.google.devtools.ksp") version "1.7.10-1.0.6" apply false
+        id("com.google.devtools.ksp") version "1.7.20-1.0.6" apply false
     }
     repositories {
         google()
@@ -12,7 +12,6 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         google()
-        mavenLocal()
         mavenCentral()
     }
 }

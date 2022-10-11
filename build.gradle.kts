@@ -7,6 +7,20 @@ plugins {
     kotlin("plugin.serialization") version "1.7.20"
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = uri("https://maven.pkg.github.com/jcraane/kmm-navigation")
+            credentials {
+                username = project.properties["github.packages.download.token"] as? String ?: System.getenv("github.packages.download.token")
+                password = project.properties["github.packages.download.token"] as? String ?: System.getenv("github.packages.download.token")
+            }
+        }
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
