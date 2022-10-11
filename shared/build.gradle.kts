@@ -78,7 +78,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.kmmstartertemplate"
+    namespace = "dev.mobilerevolution.starter"
     compileSdk = Versions.compileSdk
     defaultConfig {
         minSdk = Versions.minSdk
@@ -93,9 +93,9 @@ dependencies {
 }
 
 kmmResourcesConfig {
-    androidApplicationId.set("com.example.kmmstartertemplate")
+    androidApplicationId.set("dev.mobilerevolution.starter")
     androidSourceFolder.set("main")
-    packageName.set("com.example.kmmtest")
+    packageName.set("dev.mobilerevolution.starter")
     defaultLanguage.set("nl")
     input.set(File(project.projectDir.path, "kmm-resources.yaml"))
     output.set(project.projectDir)
@@ -113,7 +113,7 @@ kmmImagesConfig {
     imageFolder.set(project.projectDir.resolve("images"))
     sharedModuleFolder.set(project.projectDir)
     androidResFolder.set(project.projectDir.resolve("../androidApp/src/main/res-kmmimages"))
-    packageName.set("com.example.kmmtest")
+    packageName.set("dev.mobilerevolution.starter")
     defaultLanguage.set("nl")
     usePdf2SvgTool.set(true)
 }

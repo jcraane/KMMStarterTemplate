@@ -5,11 +5,11 @@
 
     <application
         android:allowBackup="false"
-        android:name="com.example.kmmtest.android.KMMStarterApp"
+        android:name="dev.mobilerevolution.starter.android.KMMStarterApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.kmmtest.android.MainActivity"
+            android:name="dev.mobilerevolution.starter.android.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,4 +17,4 @@
             </intent-filter>
         </activity>
     </application>
-</manifest> 
+</manifest>
