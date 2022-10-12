@@ -3,6 +3,7 @@ package dev.mobilerevolution.starter.android.modules.season
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -12,13 +13,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.kmmtest.android.extensions.ToComposable
-import com.example.kmmtest.android.extensions.drawable
-import com.example.kmmtest.android.ui.theme.SubTitle
-import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.season.RaceDetails
-import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.util.DataState
+import dev.mobilerevolution.starter.android.extensions.ToComposable
+import dev.mobilerevolution.starter.android.extensions.drawable
+import dev.mobilerevolution.starter.android.ui.theme.SubTitle
+import dev.mobilerevolution.starter.android.ui.theme.Title
+import dev.mobilerevolution.starter.f1.viewmodel.season.RaceDetails
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
+import dev.mobilerevolution.starter.util.DataState
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 @OptIn(ExperimentalLifecycleComposeApi::class)

@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
@@ -14,14 +15,14 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import com.example.kmmtest.android.extensions.ToComposable
-import com.example.kmmtest.android.ui.theme.Caption
-import com.example.kmmtest.android.ui.theme.SubTitle
-import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.season.RaceOverviewItem
-import com.example.kmmtest.f1.viewmodel.season.SeasonOutput
-import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.util.DataState
+import dev.mobilerevolution.starter.android.extensions.ToComposable
+import dev.mobilerevolution.starter.android.ui.theme.Caption
+import dev.mobilerevolution.starter.android.ui.theme.SubTitle
+import dev.mobilerevolution.starter.android.ui.theme.Title
+import dev.mobilerevolution.starter.f1.viewmodel.season.RaceOverviewItem
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonOutput
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
+import dev.mobilerevolution.starter.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable

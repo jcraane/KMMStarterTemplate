@@ -12,10 +12,10 @@ detekt {
 }
 
 android {
-    namespace = "com.example.kmmstartertemplate.android"
+    namespace = "dev.mobilerevolution.starter.android"
     compileSdk = Versions.compileSdk
     defaultConfig {
-        applicationId = "com.example.kmmstartertemplate.android"
+        applicationId = "dev.mobilerevolution.starter.android"
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
         versionCode = 1

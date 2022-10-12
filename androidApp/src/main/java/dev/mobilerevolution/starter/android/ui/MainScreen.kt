@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
-import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
-import com.example.kmmtest.navigation.*
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
+import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
+import dev.mobilerevolution.starter.navigation.*
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable

@@ -3,7 +3,7 @@ package dev.mobilerevolution.starter.android.extensions
 import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
-import com.example.kmmtest.Image
+import dev.mobilerevolution.starter.Image
 
 /**
  * Extension function to obtain a drawable from an Image.

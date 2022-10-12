@@ -6,14 +6,14 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.kmmtest.android.extensions.toNavArguments
-import com.example.kmmtest.android.modules.season.RaceScreen
-import com.example.kmmtest.android.modules.season.SeasonScreen
-import com.example.kmmtest.android.modules.standings.DriverStandingsScreen
-import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
-import com.example.kmmtest.navigation.BottomTabs
-import com.example.kmmtest.navigation.RaceDetailsNavEvent
+import dev.mobilerevolution.starter.android.extensions.toNavArguments
+import dev.mobilerevolution.starter.android.modules.season.RaceScreen
+import dev.mobilerevolution.starter.android.modules.season.SeasonScreen
+import dev.mobilerevolution.starter.android.modules.standings.DriverStandingsScreen
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
+import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
+import dev.mobilerevolution.starter.navigation.BottomTabs
+import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 
 @Composable
 fun StarterAppNavHost(

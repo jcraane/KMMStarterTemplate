@@ -1,4 +1,4 @@
-package com.example.kmmstartertemplate
+package dev.mobilerevolution.starter
 
 interface Platform {
     val name: String

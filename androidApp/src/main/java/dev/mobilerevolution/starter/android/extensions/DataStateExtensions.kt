@@ -1,7 +1,7 @@
 package dev.mobilerevolution.starter.android.extensions
 
 import androidx.compose.runtime.Composable
-import com.example.kmmtest.util.DataState
+import dev.mobilerevolution.starter.util.DataState
 
 @Composable
 fun <T> DataState<T>.ToComposable(

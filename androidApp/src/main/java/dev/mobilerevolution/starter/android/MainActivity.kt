@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Surface
-import com.example.kmmtest.android.ui.MyApplicationTheme
+import dev.mobilerevolution.starter.Images
+import dev.mobilerevolution.starter.android.extensions.drawable
+import dev.mobilerevolution.starter.android.ui.MainScreen
+import dev.mobilerevolution.starter.android.ui.theme.MyApplicationTheme
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.navigation.ScreenNavigator

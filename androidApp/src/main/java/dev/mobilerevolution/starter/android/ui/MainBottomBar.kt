@@ -48,8 +48,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import com.example.kmmtest.android.extensions.drawable
-import com.example.kmmtest.navigation.BottomTabs
+import dev.mobilerevolution.starter.android.extensions.drawable
+import dev.mobilerevolution.starter.navigation.BottomTabs
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 @Composable

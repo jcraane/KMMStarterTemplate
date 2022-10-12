@@ -1,9 +1,9 @@
 package dev.mobilerevolution.starter.android
 
-import com.example.kmmtest.f1.viewmodel.season.SeasonViewModel
-import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
-import com.example.kmmtest.util.formatting.AndroidLocalDateTimeFormatter
-import com.example.kmmtest.util.formatting.LocalDateTimeFormatter
+import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
+import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
+import dev.mobilerevolution.starter.util.formatting.AndroidLocalDateTimeFormatter
+import dev.mobilerevolution.starter.util.formatting.LocalDateTimeFormatter
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

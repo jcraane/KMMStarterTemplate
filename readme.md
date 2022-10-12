@@ -22,6 +22,10 @@ Open the `iosApp.xcworkspace` in AppCode/Xcode and you should be able to run it.
 ## Todo
 
 - Add KMP logging library
-- Update to 1.7.20
-- add driver standings
+- Update to 1.7.20 (done, still need to test it)
 - add api environment switch
+- Add persistence for settings
+- Add caching layer
+
+## Known Issues
+ - If the generated events cannot be found run gradle shared:build to trigger code generation

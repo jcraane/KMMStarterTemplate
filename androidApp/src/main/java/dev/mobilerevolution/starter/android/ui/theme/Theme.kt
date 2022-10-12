@@ -1,4 +1,4 @@
-package com.example.kmmtest.android.ui
+package dev.mobilerevolution.starter.android.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,7 +11,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.kmmstartertemplate.android.R
+import dev.mobilerevolution.starter.android.R
 
 @Composable
 @Suppress("MagicNumber")
@@ -21,7 +21,7 @@ fun MyApplicationTheme(
 ) {
     val colors = if (darkTheme) {
         darkColors(
-            primary = colorResource(R.color.primaryDarkColor),
+            primary = colorResource(dev.mobilerevolution.starter.android.R.color.primaryDarkColor),
             primaryVariant = Color(0xFF3700B3),
             secondary = colorResource(R.color.secondaryDarkColor),
             onPrimary = colorResource(R.color.primaryTextColor),

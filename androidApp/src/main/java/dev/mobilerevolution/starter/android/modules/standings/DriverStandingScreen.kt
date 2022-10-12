@@ -2,6 +2,7 @@ package dev.mobilerevolution.starter.android.modules.standings
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -9,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.kmmtest.android.extensions.ToComposable
-import com.example.kmmtest.android.ui.theme.Caption
-import com.example.kmmtest.android.ui.theme.SubTitle
-import com.example.kmmtest.android.ui.theme.Title
-import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsOutput
-import com.example.kmmtest.f1.viewmodel.standings.DriverStandingsViewModel
-import com.example.kmmtest.util.DataState
+import dev.mobilerevolution.starter.android.extensions.ToComposable
+import dev.mobilerevolution.starter.android.ui.theme.Caption
+import dev.mobilerevolution.starter.android.ui.theme.SubTitle
+import dev.mobilerevolution.starter.android.ui.theme.Title
+import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsOutput
+import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
+import dev.mobilerevolution.starter.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
