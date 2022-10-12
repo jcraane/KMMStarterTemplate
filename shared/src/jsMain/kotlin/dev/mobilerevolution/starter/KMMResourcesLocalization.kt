@@ -1,5 +1,5 @@
 
-package com.example.kmmtest
+package dev.mobilerevolution.starter
 
 
 import kotlinx.browser.window

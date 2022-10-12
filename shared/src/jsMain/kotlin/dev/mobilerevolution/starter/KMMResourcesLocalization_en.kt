@@ -1,6 +1,6 @@
 
 // Generated en localization file\n
-package com.example.kmmtest
+package dev.mobilerevolution.starter
 
 
 internal fun localizations_en(): Map<String, String> {

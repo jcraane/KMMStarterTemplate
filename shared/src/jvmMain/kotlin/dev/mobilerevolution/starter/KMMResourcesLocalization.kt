@@ -1,4 +1,4 @@
-package com.example.kmmtest
+package dev.mobilerevolution.starter
 
 actual fun L.App.title(): String = ""
 actual fun L.BottomTab.DriverStandings.tabLabel(): String = ""
