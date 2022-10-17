@@ -51,6 +51,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+//                implementation(Dependencies.SqlDelight.sqlDelightAndroidDriver)
                 /*implementation(Dependencies.Compose.lifecycleViewModel)
                 implementation(Dependencies.Compose.lifecycleViewModelKtx)*/
             }
@@ -64,6 +65,10 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation(Dependencies.SqlDelight.sqlDelightNativeDriver)
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -87,6 +92,7 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.SqlDelight.sqlDelightAndroidDriver)
     implementation(Dependencies.Compose.lifecycleViewModel)
     implementation(Dependencies.Compose.lifecycleViewModelKtx)
     add("kspCommonMainMetadata", Dependencies.KmmNavigation.annotationProcessor)

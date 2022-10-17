@@ -3,4 +3,8 @@ CREATE TABLE preferences(
     data TEXT AS dev.mobilerevolution.starter.common.preferences.Preferences NOT NULL
 );
 
+insertOrReplace:
 INSERT OR REPLACE INTO preferences(data) VALUES(?);
+
+select:
+SELECT data FROM preferences;
