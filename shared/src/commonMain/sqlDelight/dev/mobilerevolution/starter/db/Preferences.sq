@@ -1,0 +1,6 @@
+CREATE TABLE preferences(
+    id INTEGER PRIMARY KEY CHECK (id = 0),
+    data TEXT AS dev.mobilerevolution.starter.common.preferences.Preferences NOT NULL
+);
+
+INSERT OR REPLACE INTO preferences(data) VALUES(?);

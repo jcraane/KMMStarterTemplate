@@ -121,11 +121,11 @@ kmmImagesConfig {
 val generateImages = tasks["generateImages"]
 tasks["preBuild"].dependsOn(generateImages)
 
-/*sqldelight {
+sqldelight {
     database("Database") {
-        packageName = "com.exampp"
+        packageName = "dev.mobilerevolution.starter.db"
     }
-}*/
+}
 
 /*
 tasks {

@@ -1,5 +1,7 @@
 package dev.mobilerevolution.starter.di
 
+import dev.mobilerevolution.starter.common.di.HttpLoggingSpec
+import dev.mobilerevolution.starter.common.di.initKoin
 import kotlinx.cinterop.ObjCClass
 import kotlinx.cinterop.getOriginalKotlinClass
 import org.koin.core.Koin

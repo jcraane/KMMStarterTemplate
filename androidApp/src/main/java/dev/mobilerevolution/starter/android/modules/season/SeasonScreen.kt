@@ -22,7 +22,7 @@ import dev.mobilerevolution.starter.android.ui.theme.Title
 import dev.mobilerevolution.starter.f1.viewmodel.season.RaceOverviewItem
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonOutput
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
-import dev.mobilerevolution.starter.util.DataState
+import dev.mobilerevolution.starter.common.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable

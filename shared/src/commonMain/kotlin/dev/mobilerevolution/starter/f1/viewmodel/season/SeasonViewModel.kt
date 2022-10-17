@@ -7,7 +7,7 @@ import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 import dev.mobilerevolution.starter.navigation.ScreenNavigator
 import dev.mobilerevolution.starter.platform.SharedViewModel
 import dev.mobilerevolution.starter.platform.scope
-import dev.mobilerevolution.starter.util.formatting.LocalDateTimeFormatter
+import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapConcat

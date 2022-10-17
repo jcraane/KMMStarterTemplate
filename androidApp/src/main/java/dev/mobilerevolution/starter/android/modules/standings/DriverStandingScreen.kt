@@ -16,7 +16,7 @@ import dev.mobilerevolution.starter.android.ui.theme.SubTitle
 import dev.mobilerevolution.starter.android.ui.theme.Title
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsOutput
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
-import dev.mobilerevolution.starter.util.DataState
+import dev.mobilerevolution.starter.common.util.DataState
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable

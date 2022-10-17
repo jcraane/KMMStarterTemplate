@@ -4,7 +4,7 @@ import dev.mobilerevolution.starter.platform.SharedViewModel
 import dev.mobilerevolution.starter.platform.scope
 import dev.mobilerevolution.starter.users.domain.User
 import dev.mobilerevolution.starter.users.repository.UserRepository
-import dev.mobilerevolution.starter.util.DataState
+import dev.mobilerevolution.starter.common.util.DataState
 import kotlinx.coroutines.flow.*
 
 class UsersViewModel(userRepository: UserRepository) : SharedViewModel() {

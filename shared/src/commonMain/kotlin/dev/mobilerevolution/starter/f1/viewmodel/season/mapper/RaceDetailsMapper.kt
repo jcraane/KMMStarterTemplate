@@ -5,8 +5,8 @@ import dev.mobilerevolution.starter.f1.domain.Race
 import dev.mobilerevolution.starter.f1.domain.Schedule
 import dev.mobilerevolution.starter.f1.domain.Season
 import dev.mobilerevolution.starter.f1.viewmodel.season.RaceDetails
-import dev.mobilerevolution.starter.util.DataState
-import dev.mobilerevolution.starter.util.formatting.LocalDateTimeFormatter
+import dev.mobilerevolution.starter.common.util.DataState
+import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
 import kotlinx.datetime.TimeZone
 
 

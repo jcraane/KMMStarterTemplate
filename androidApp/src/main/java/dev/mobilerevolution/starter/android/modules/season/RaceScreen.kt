@@ -19,7 +19,7 @@ import dev.mobilerevolution.starter.android.ui.theme.SubTitle
 import dev.mobilerevolution.starter.android.ui.theme.Title
 import dev.mobilerevolution.starter.f1.viewmodel.season.RaceDetails
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
-import dev.mobilerevolution.starter.util.DataState
+import dev.mobilerevolution.starter.common.util.DataState
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 @OptIn(ExperimentalLifecycleComposeApi::class)

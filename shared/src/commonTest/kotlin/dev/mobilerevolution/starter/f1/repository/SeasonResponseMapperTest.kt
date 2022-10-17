@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class SeasonResponseMapperTest {
     @Test
     fun mapSeasonResponseToDomain() {
-        val response = dev.mobilerevolution.starter.di.json.decodeFromString(SeasonResponse.serializer(), json)
+        val response = dev.mobilerevolution.starter.common.di.json.decodeFromString(SeasonResponse.serializer(), json)
         val season = SeasonResponseMapper().map(response)
         assertEquals(2, season.races.size)
     }

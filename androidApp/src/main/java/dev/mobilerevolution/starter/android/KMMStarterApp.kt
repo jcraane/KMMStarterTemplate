@@ -1,8 +1,8 @@
 package dev.mobilerevolution.starter.android
 
 import android.app.Application
-import dev.mobilerevolution.starter.di.HttpLoggingSpec
-import dev.mobilerevolution.starter.di.initKoin
+import dev.mobilerevolution.starter.common.di.HttpLoggingSpec
+import dev.mobilerevolution.starter.common.di.initKoin
 import dev.mobilerevolution.starter.localizationContext
 import io.ktor.client.plugins.logging.*
 import org.koin.android.ext.koin.androidContext
@@ -14,7 +14,7 @@ class KMMStarterApp : Application() {
         super.onCreate()
 
         localizationContext = this
-        initKoin(createHttpLoggingSpec(), viewModelsModule = dev.mobilerevolution.starter.android.viewModelsModule) {
+        initKoin(createHttpLoggingSpec(), viewModelsModule = viewModelsModule) {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@KMMStarterApp)
         }

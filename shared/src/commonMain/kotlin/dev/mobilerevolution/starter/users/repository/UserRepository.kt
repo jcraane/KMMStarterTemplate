@@ -2,8 +2,8 @@ package dev.mobilerevolution.starter.users.repository
 
 import dev.mobilerevolution.starter.users.api.UserApi
 import dev.mobilerevolution.starter.users.domain.User
-import dev.mobilerevolution.starter.util.DataState
-import dev.mobilerevolution.starter.util.runSuspendCatching
+import dev.mobilerevolution.starter.common.util.DataState
+import dev.mobilerevolution.starter.common.util.runSuspendCatching
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

@@ -3,7 +3,7 @@ package dev.mobilerevolution.starter.f1.repository
 import dev.mobilerevolution.starter.f1.api.F1Api
 import dev.mobilerevolution.starter.f1.domain.DriverStandings
 import dev.mobilerevolution.starter.f1.domain.Season
-import dev.mobilerevolution.starter.util.DataState
+import dev.mobilerevolution.starter.common.util.DataState
 import kotlinx.coroutines.flow.Flow
 
 class F1Repository(private val f1Api: F1Api) {

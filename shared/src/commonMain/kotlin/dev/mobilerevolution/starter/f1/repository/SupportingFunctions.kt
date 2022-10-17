@@ -1,7 +1,7 @@
 package dev.mobilerevolution.starter.f1.repository
 
-import dev.mobilerevolution.starter.util.DataState
-import dev.mobilerevolution.starter.util.runSuspendCatching
+import dev.mobilerevolution.starter.common.util.DataState
+import dev.mobilerevolution.starter.common.util.runSuspendCatching
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
