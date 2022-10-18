@@ -1,7 +1,5 @@
 package dev.mobilerevolution.starter.common.preferences
 
-import com.squareup.sqldelight.ColumnAdapter
-import dev.mobilerevolution.starter.db.Preferences
 import kotlinx.serialization.Serializable
 
 /**
@@ -11,10 +9,16 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Preferences(
     val launchData: LaunchData,
+    val userData: UserData,
 )
 
 @Serializable
 data class LaunchData(
     val currentAppVersion: String,
     val previousAppVersion: String? = null,
+)
+
+@Serializable
+data class UserData(
+    val username: String?,
 )

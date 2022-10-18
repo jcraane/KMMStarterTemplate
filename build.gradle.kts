@@ -9,7 +9,7 @@ plugins {
 
 buildscript {
     dependencies {
-        classpath(Dependencies.SqlDelight.sqlDelightGradlePlugin)
+        classpath(Dependencies.SqlDelight.gradlePlugin)
     }
 }
 

@@ -15,3 +15,6 @@ sealed class BaseNavigationEvent(val id: String = randomUUID())
 @Route("race/{raceId}", baseClassQualifiedName = "dev.mobilerevolution.starter.navigation.BaseNavigationEvent")
 @Argument(name = "raceId", type = ArgType.STRING)
 object RaceDetails
+
+@Route("settings", baseClassQualifiedName = "dev.mobilerevolution.starter.navigation.BaseNavigationEvent")
+object Preferences

@@ -8,6 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
+import dev.mobilerevolution.starter.common.MainViewModel
+import dev.mobilerevolution.starter.common.preferences.Preferences
+import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.navigation.*
@@ -18,6 +21,8 @@ fun MainScreen(
     navigator: ScreenNavigator,
     seasonViewModel: SeasonViewModel,
     driverStandingsViewModel: DriverStandingsViewModel,
+    preferencesViewModel: PreferencesViewModel,
+    mainViewModel: MainViewModel,
     modifier: Modifier = Modifier,
 ) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
@@ -26,10 +31,15 @@ fun MainScreen(
 //    todo test this with a configuration change to see if events are still being processed.
     val event: BaseNavigationEvent? by navigator.navigationEvents.collectAsStateWithLifecycle(null)
 
+//    todo changes implementation that route is a base method so we do need an explicit case in when for each event but can just say:
+//     event.route()
     event.let {
         when (it) {
             is RaceDetailsNavEvent -> navHostController.navigate(it.route())
-            null -> { /*Do nothing*/ }
+            null -> { /*Do nothing*/
+            }
+
+            is PreferencesNavEvent -> navHostController.navigate(it.route())
         }
     }
 
@@ -37,7 +47,7 @@ fun MainScreen(
         modifier = modifier,
         scaffoldState = scaffoldState,
         topBar = {
-            StarterAppTopAppBar()
+            StarterAppTopAppBar(onPreferencesClicked = { mainViewModel.onSettingsClicked() })
         },
         bottomBar = {
             MainBottomBar(navController = navHostController, items = BottomTabs.values().toList())
@@ -47,6 +57,7 @@ fun MainScreen(
             navController = navHostController,
             seasonViewModel = seasonViewModel,
             driverStandingsViewModel = driverStandingsViewModel,
+            preferencesViewModel = preferencesViewModel,
             modifier = Modifier.padding(paddingValues),
         )
     }

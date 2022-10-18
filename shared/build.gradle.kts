@@ -42,6 +42,7 @@ kotlin {
                 implementation(Dependencies.JetBrains.kotlinDateTime)
                 implementation(Dependencies.Koin.core)
                 implementation(Dependencies.KmmNavigation.annotations)
+                implementation(Dependencies.SqlDelight.coroutineExtensions)
             }
         }
         val commonTest by getting {
@@ -50,11 +51,6 @@ kotlin {
             }
         }
         val androidMain by getting {
-            dependencies {
-//                implementation(Dependencies.SqlDelight.sqlDelightAndroidDriver)
-                /*implementation(Dependencies.Compose.lifecycleViewModel)
-                implementation(Dependencies.Compose.lifecycleViewModelKtx)*/
-            }
         }
         val androidTest by getting
         val iosX64Main by getting
@@ -67,7 +63,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
 
             dependencies {
-                implementation(Dependencies.SqlDelight.sqlDelightNativeDriver)
+                implementation(Dependencies.SqlDelight.nativeDriver)
             }
         }
         val iosX64Test by getting
@@ -92,7 +88,7 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.SqlDelight.sqlDelightAndroidDriver)
+    implementation(Dependencies.SqlDelight.androidDriver)
     implementation(Dependencies.Compose.lifecycleViewModel)
     implementation(Dependencies.Compose.lifecycleViewModelKtx)
     add("kspCommonMainMetadata", Dependencies.KmmNavigation.annotationProcessor)

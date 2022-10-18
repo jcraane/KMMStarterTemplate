@@ -1,5 +1,7 @@
 package dev.mobilerevolution.starter.android
 
+import dev.mobilerevolution.starter.common.MainViewModel
+import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.util.formatting.AndroidLocalDateTimeFormatter
@@ -25,5 +27,13 @@ val viewModelsModule = module {
 
     viewModel {
         DriverStandingsViewModel(f1Repository = get())
+    }
+
+    viewModel {
+        PreferencesViewModel(preferencesRepository = get())
+    }
+
+    viewModel {
+        MainViewModel(navigator = get())
     }
 }

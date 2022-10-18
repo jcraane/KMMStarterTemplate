@@ -9,10 +9,13 @@ import androidx.navigation.compose.composable
 import dev.mobilerevolution.starter.android.extensions.toNavArguments
 import dev.mobilerevolution.starter.android.modules.season.RaceScreen
 import dev.mobilerevolution.starter.android.modules.season.SeasonScreen
+import dev.mobilerevolution.starter.android.modules.settings.PreferencesScreen
 import dev.mobilerevolution.starter.android.modules.standings.DriverStandingsScreen
+import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.navigation.BottomTabs
+import dev.mobilerevolution.starter.navigation.PreferencesNavEvent
 import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 
 @Composable
@@ -20,6 +23,7 @@ fun StarterAppNavHost(
     navController: NavHostController,
     seasonViewModel: SeasonViewModel,
     driverStandingsViewModel: DriverStandingsViewModel,
+    preferencesViewModel: PreferencesViewModel,
     modifier: Modifier = Modifier,
 ) {
     NavHost(
@@ -41,6 +45,12 @@ fun StarterAppNavHost(
         ) { entry ->
             val raceId = entry.arguments?.getString(RaceDetailsNavEvent.raceId) ?: ""
             RaceScreen(seasonViewModel, raceId)
+        }
+
+        composable(
+            route = PreferencesNavEvent.route,
+        ) {
+            PreferencesScreen(preferencesViewModel)
         }
     }
 }
