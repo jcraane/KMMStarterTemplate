@@ -23,14 +23,16 @@ import dev.mobilerevolution.starter.f1.viewmodel.season.RaceOverviewItem
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonOutput
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.common.util.DataState
+import dev.mobilerevolution.starter.navigation.Navigator
+import org.koin.androidx.compose.getViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun SeasonScreen(
-    seasonViewModel: SeasonViewModel,
-    navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
+    val seasonViewModel: SeasonViewModel = getViewModel()
     val output: DataState<SeasonOutput> by seasonViewModel.seasonsOutput.collectAsStateWithLifecycle(DataState.Empty())
     SeasonScreenContent(
         output,

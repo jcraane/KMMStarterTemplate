@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import dev.mobilerevolution.starter.common.MainViewModel
 import dev.mobilerevolution.starter.common.preferences.Preferences
@@ -14,33 +15,28 @@ import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.navigation.*
+import org.koin.android.ext.android.inject
+import org.koin.androidx.compose.get
+import org.koin.androidx.compose.getViewModel
+import org.koin.androidx.compose.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun MainScreen(
-    navigator: ScreenNavigator,
-    seasonViewModel: SeasonViewModel,
+    navHostController: NavHostController,
     driverStandingsViewModel: DriverStandingsViewModel,
     preferencesViewModel: PreferencesViewModel,
     mainViewModel: MainViewModel,
     modifier: Modifier = Modifier,
 ) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
-    val navHostController = rememberNavController()
 
-//    todo test this with a configuration change to see if events are still being processed.
-    val event: BaseNavigationEvent? by navigator.navigationEvents.collectAsStateWithLifecycle(null)
-
-//    todo changes implementation that route is a base method so we do need an explicit case in when for each event but can just say:
-//     event.route()
-    event.let {
-        when (it) {
-            is RaceDetailsNavEvent -> navHostController.navigate(it.route())
-            null -> { /*Do nothing*/
-            }
-
-            is PreferencesNavEvent -> navHostController.navigate(it.route())
-        }
+//    Although this param is not used directly we need to get it here and provide the navHostController so Koin
+    // can inject the Navigator with navHostController to the view models.
+    val navigator: Navigator = get() {
+        parametersOf(navHostController)
     }
 
     Scaffold(
@@ -55,7 +51,6 @@ fun MainScreen(
     ) { paddingValues ->
         StarterAppNavHost(
             navController = navHostController,
-            seasonViewModel = seasonViewModel,
             driverStandingsViewModel = driverStandingsViewModel,
             preferencesViewModel = preferencesViewModel,
             modifier = Modifier.padding(paddingValues),

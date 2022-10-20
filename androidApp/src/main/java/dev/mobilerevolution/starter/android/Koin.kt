@@ -1,13 +1,16 @@
 package dev.mobilerevolution.starter.android
 
+import dev.mobilerevolution.starter.android.ui.AndroidComposeNavigator
 import dev.mobilerevolution.starter.common.MainViewModel
 import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.util.formatting.AndroidLocalDateTimeFormatter
 import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
+import dev.mobilerevolution.starter.navigation.Navigator
 import dev.mobilerevolution.starter.platform.AndroidDriverFactory
 import dev.mobilerevolution.starter.platform.DriverFactory
+import io.ktor.http.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -21,8 +24,16 @@ val viewModelsModule = module {
         AndroidLocalDateTimeFormatter()
     }
 
+    single<Navigator> { parameters ->
+        AndroidComposeNavigator(parameters.get())
+    }
+
     viewModel {
-        SeasonViewModel(f1Repository = get(), localDateTimeFormatter = get(), navigator = get())
+        SeasonViewModel(
+            f1Repository = get(),
+            localDateTimeFormatter = get(),
+            navigator = get(),
+        )
     }
 
     viewModel {

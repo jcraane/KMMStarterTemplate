@@ -21,14 +21,17 @@ import dev.mobilerevolution.starter.f1.viewmodel.season.RaceDetails
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.common.util.DataState
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
+import dev.mobilerevolution.starter.navigation.Navigator
+import org.koin.androidx.compose.getViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun RaceScreen(
-    seasonViewModel: SeasonViewModel,
     raceId: String,
     modifier: Modifier = Modifier,
 ) {
+    val seasonViewModel: SeasonViewModel = getViewModel()
     val output by seasonViewModel.selectedRaceOutput.collectAsStateWithLifecycle(DataState.Empty())
     seasonViewModel.selectRace(raceId)
 
@@ -41,7 +44,9 @@ private fun RaceScreenContent(
     modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = modifier.padding(top = 16.dp).fillMaxWidth(),
+        modifier = modifier
+            .padding(top = 16.dp)
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         output.ToComposable { raceDetails ->

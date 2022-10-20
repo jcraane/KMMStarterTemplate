@@ -8,6 +8,7 @@ import dev.mobilerevolution.starter.navigation.ScreenNavigator
 import dev.mobilerevolution.starter.platform.SharedViewModel
 import dev.mobilerevolution.starter.platform.scope
 import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
+import dev.mobilerevolution.starter.navigation.Navigator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapConcat
@@ -19,7 +20,7 @@ import kotlinx.datetime.toLocalDateTime
 
 class SeasonViewModel(
     f1Repository: F1Repository,
-    private val navigator: ScreenNavigator,
+    private val navigator: Navigator,
     private val localDateTimeFormatter: LocalDateTimeFormatter,
 ) : SharedViewModel() {
     private val _selectedYear = MutableStateFlow(
@@ -60,8 +61,6 @@ class SeasonViewModel(
     }
 
     fun onRaceSelectedClicked(raceId: String) {
-        scope.launch {
-            navigator.navigate(RaceDetailsNavEvent(raceId))
-        }
+        navigator.navigate(RaceDetailsNavEvent(raceId))
     }
 }

@@ -15,24 +15,25 @@ import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.season.SeasonViewModel
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.navigation.BottomTabs
+import dev.mobilerevolution.starter.navigation.Navigator
 import dev.mobilerevolution.starter.navigation.PreferencesNavEvent
 import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 
 @Composable
 fun StarterAppNavHost(
     navController: NavHostController,
-    seasonViewModel: SeasonViewModel,
     driverStandingsViewModel: DriverStandingsViewModel,
     preferencesViewModel: PreferencesViewModel,
     modifier: Modifier = Modifier,
 ) {
+
     NavHost(
         navController = navController,
         startDestination = BottomTabs.SEASON.route,
         modifier = modifier,
     ) {
         composable(route = BottomTabs.SEASON.route) {
-            SeasonScreen(seasonViewModel, navController)
+            SeasonScreen()
         }
 
         composable(route = BottomTabs.DRIVER_STANDINGS.route) {
@@ -44,7 +45,7 @@ fun StarterAppNavHost(
             arguments = RaceDetailsNavEvent.arguments.toNavArguments,
         ) { entry ->
             val raceId = entry.arguments?.getString(RaceDetailsNavEvent.raceId) ?: ""
-            RaceScreen(seasonViewModel, raceId)
+            RaceScreen(raceId)
         }
 
         composable(
