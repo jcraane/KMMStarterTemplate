@@ -4,7 +4,6 @@ import dev.mobilerevolution.starter.common.preferences.PreferencesRepository
 import dev.mobilerevolution.starter.f1.api.F1Api
 import dev.mobilerevolution.starter.f1.api.F1ApiKtor
 import dev.mobilerevolution.starter.f1.repository.F1Repository
-import dev.mobilerevolution.starter.navigation.ScreenNavigator
 import dev.mobilerevolution.starter.users.api.UserApi
 import dev.mobilerevolution.starter.users.api.UserApiKtor
 import dev.mobilerevolution.starter.users.repository.UserRepository
@@ -30,7 +29,6 @@ fun commonModule(httpLoggingSpec: HttpLoggingSpec) = module {
         createHttpClient(httpLoggingSpec, json = get())
     }
 
-    single { ScreenNavigator() }
     single<UserApi> { UserApiKtor(httpClient = get()) }
     single<F1Api> { F1ApiKtor(httpClient = get()) }
     single { UserRepository(userApi = get()) }

@@ -11,13 +11,14 @@ import dev.mobilerevolution.starter.android.extensions.ToComposable
 import dev.mobilerevolution.starter.common.preferences.Preferences
 import dev.mobilerevolution.starter.common.preferences.PreferencesViewModel
 import dev.mobilerevolution.starter.common.util.DataState
+import org.koin.androidx.compose.getViewModel
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun PreferencesScreen(
-    preferencesViewModel: PreferencesViewModel,
     modifier: Modifier = Modifier,
 ) {
+    val preferencesViewModel: PreferencesViewModel = getViewModel()
     val preferences: DataState<Preferences> by preferencesViewModel.preferences.collectAsStateWithLifecycle()
     PreferencesScreenContent(preferences, modifier)
 }

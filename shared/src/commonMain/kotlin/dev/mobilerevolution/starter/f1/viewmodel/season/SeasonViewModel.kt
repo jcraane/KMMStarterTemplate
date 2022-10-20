@@ -1,19 +1,16 @@
 package dev.mobilerevolution.starter.f1.viewmodel.season
 
+import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
 import dev.mobilerevolution.starter.f1.domain.Season
 import dev.mobilerevolution.starter.f1.repository.F1Repository
 import dev.mobilerevolution.starter.f1.viewmodel.season.mapper.findAndMapRace
-import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
-import dev.mobilerevolution.starter.navigation.ScreenNavigator
-import dev.mobilerevolution.starter.platform.SharedViewModel
-import dev.mobilerevolution.starter.platform.scope
-import dev.mobilerevolution.starter.common.util.formatting.LocalDateTimeFormatter
 import dev.mobilerevolution.starter.navigation.Navigator
+import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
+import dev.mobilerevolution.starter.platform.SharedViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime

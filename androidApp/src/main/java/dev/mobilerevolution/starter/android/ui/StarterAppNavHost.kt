@@ -22,7 +22,6 @@ import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 @Composable
 fun StarterAppNavHost(
     navController: NavHostController,
-    preferencesViewModel: PreferencesViewModel,
     modifier: Modifier = Modifier,
 ) {
 
@@ -50,7 +49,7 @@ fun StarterAppNavHost(
         composable(
             route = PreferencesNavEvent.route,
         ) {
-            PreferencesScreen(preferencesViewModel)
+            PreferencesScreen()
         }
     }
 }

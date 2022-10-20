@@ -26,8 +26,6 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun MainScreen(
     navHostController: NavHostController,
-    preferencesViewModel: PreferencesViewModel,
-    mainViewModel: MainViewModel,
     modifier: Modifier = Modifier,
 ) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
@@ -37,6 +35,8 @@ fun MainScreen(
     val navigator: Navigator = get() {
         parametersOf(navHostController)
     }
+
+    val mainViewModel: MainViewModel = getViewModel()
 
     Scaffold(
         modifier = modifier,
@@ -50,7 +50,6 @@ fun MainScreen(
     ) { paddingValues ->
         StarterAppNavHost(
             navController = navHostController,
-            preferencesViewModel = preferencesViewModel,
             modifier = Modifier.padding(paddingValues),
         )
     }
