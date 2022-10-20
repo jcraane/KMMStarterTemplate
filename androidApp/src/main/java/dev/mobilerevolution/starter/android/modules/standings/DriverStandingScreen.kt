@@ -17,13 +17,15 @@ import dev.mobilerevolution.starter.android.ui.theme.Title
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsOutput
 import dev.mobilerevolution.starter.f1.viewmodel.standings.DriverStandingsViewModel
 import dev.mobilerevolution.starter.common.util.DataState
+import org.koin.androidx.compose.getViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun DriverStandingsScreen(
-    driverStandingsViewModel: DriverStandingsViewModel,
     modifier: Modifier = Modifier,
 ) {
+    val driverStandingsViewModel: DriverStandingsViewModel = getViewModel()
     val output: DataState<DriverStandingsOutput> by driverStandingsViewModel.driverStandingsOutput
         .collectAsStateWithLifecycle(initialValue = DataState.Empty())
     DriverStandingsContent(output = output, modifier = modifier)

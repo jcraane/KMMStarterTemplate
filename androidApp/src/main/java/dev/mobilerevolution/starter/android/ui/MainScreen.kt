@@ -26,7 +26,6 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun MainScreen(
     navHostController: NavHostController,
-    driverStandingsViewModel: DriverStandingsViewModel,
     preferencesViewModel: PreferencesViewModel,
     mainViewModel: MainViewModel,
     modifier: Modifier = Modifier,
@@ -51,7 +50,6 @@ fun MainScreen(
     ) { paddingValues ->
         StarterAppNavHost(
             navController = navHostController,
-            driverStandingsViewModel = driverStandingsViewModel,
             preferencesViewModel = preferencesViewModel,
             modifier = Modifier.padding(paddingValues),
         )

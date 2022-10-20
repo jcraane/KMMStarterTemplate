@@ -22,7 +22,6 @@ import dev.mobilerevolution.starter.navigation.RaceDetailsNavEvent
 @Composable
 fun StarterAppNavHost(
     navController: NavHostController,
-    driverStandingsViewModel: DriverStandingsViewModel,
     preferencesViewModel: PreferencesViewModel,
     modifier: Modifier = Modifier,
 ) {
@@ -37,7 +36,7 @@ fun StarterAppNavHost(
         }
 
         composable(route = BottomTabs.DRIVER_STANDINGS.route) {
-            DriverStandingsScreen(driverStandingsViewModel = driverStandingsViewModel)
+            DriverStandingsScreen()
         }
 
         composable(

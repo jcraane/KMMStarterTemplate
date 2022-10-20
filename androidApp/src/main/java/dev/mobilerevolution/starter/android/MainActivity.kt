@@ -20,7 +20,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class MainActivity : ComponentActivity() {
-    private val driverStandingsViewModel: DriverStandingsViewModel by viewModel()
     private val preferencesViewModel: PreferencesViewModel by viewModel()
     private val mainViewModel: MainViewModel by viewModel()
 
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
             MyApplicationTheme {
                 Surface {
-                    MainScreen(navHostController, driverStandingsViewModel, preferencesViewModel, mainViewModel)
+                    MainScreen(navHostController, preferencesViewModel, mainViewModel)
                 }
             }
         }
