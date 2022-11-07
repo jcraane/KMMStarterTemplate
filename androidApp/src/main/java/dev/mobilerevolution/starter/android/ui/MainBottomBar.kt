@@ -51,9 +51,11 @@ import androidx.navigation.NavHostController
 import dev.mobilerevolution.starter.android.extensions.drawable
 import dev.mobilerevolution.starter.navigation.BottomTabs
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
+import dev.mobilerevolution.starter.common.MainViewModel
 
 @Composable
 fun MainBottomBar(
+    mainViewModel: MainViewModel,
     navController: NavHostController,
     items: List<BottomTabs>,
     modifier: Modifier = Modifier,
@@ -67,6 +69,7 @@ fun MainBottomBar(
         ) {}
 
         AppBottomNavigation(
+            mainViewModel = mainViewModel,
             navController = navController,
             items = items
         )
@@ -75,6 +78,7 @@ fun MainBottomBar(
 
 @Composable
 private fun AppBottomNavigation(
+    mainViewModel: MainViewModel,
     navController: NavHostController,
     items: List<BottomTabs>
 ) {
@@ -109,6 +113,7 @@ private fun AppBottomNavigation(
                 alwaysShowLabel = true,
                 onClick = {
                     if (!isSelected) {
+//                        todo we need to move this somehow to Navigator, provide extra openTab function?
                         selectedIndex.value = index
                         navController.navigate(screen.route) {
                             popUpTo(navController.graph.findStartDestination().id) {

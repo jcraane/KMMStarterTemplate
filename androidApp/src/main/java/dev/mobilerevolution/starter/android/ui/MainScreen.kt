@@ -45,7 +45,7 @@ fun MainScreen(
             StarterAppTopAppBar(onPreferencesClicked = { mainViewModel.onSettingsClicked() })
         },
         bottomBar = {
-            MainBottomBar(navController = navHostController, items = BottomTabs.values().toList())
+            MainBottomBar(navController = navHostController, items = BottomTabs.values().toList(), mainViewModel = mainViewModel)
         }
     ) { paddingValues ->
         StarterAppNavHost(

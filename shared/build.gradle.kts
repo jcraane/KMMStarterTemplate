@@ -4,7 +4,7 @@ plugins {
     kotlin(Plugins.kotlinSerialization)
     id(Plugins.androidLibrary)
     id(Plugins.kotlinParcelize)
-    id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
+//    id(Plugins.kmpNativeCoroutines) version (Versions.kmpNativeCoroutinesVersion)
     id(Plugins.kmmResource) version (Versions.kmmResources)
     id(Plugins.kmmImages) version (Versions.kmmImages)
     id(Plugins.ksp)
